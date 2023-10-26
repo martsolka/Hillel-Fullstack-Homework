@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ДЗ 5. Layout \ Flexbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo"></div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+        </ul>
+      </nav>
+      <div class="sign-actions">
+        <button class="btn">Sign In</button>
+        <button class="btn btn-outline">Sign Up</button>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="first-screen">
+      <div class="first-screen-container container">
+        <div class="first-screen-content">
+          <h1 class="first-screen-title title">Want anything to be easy with <b>LaslesVPN.</b></h1>
+          <p class="first-screen-subtitle subtitle">Provide a network for all your needs with ease and fun using
+            <b>LaslesVPN</b> discover
+            interesting features from us.
+          </p>
+          <button class="btn btn-primary" type="button">Get Started</button>
+        </div>
+        <div class="first-screen-img">
+          <img src="./images/first-screen-banner.png" alt="Man in glasses and scholars work at the computer">
+        </div>
+      </div>
+    </section>
+    <section class="statistics">
+      <div class="statistics-container container blur-shadow">
+        <h2 class="sr-only">Our statistics</h2>
+        <div class="statistic-card">
+          <div class="statistic-card-icon" style="background-image: url(./images/user.png);"></div>
+          <div class="statistic-card-value"><span>90+</span>Users</div>
+        </div>
+        <div class="statistic-card">
+          <div class="statistic-card-icon" style="background-image: url(./images/location.png);"></div>
+          <div class="statistic-card-value"><span>30+</span>Locations</div>
+        </div>
+        <div class="statistic-card">
+          <div class="statistic-card-icon" style="background-image: url(./images/Server.png);"></div>
+          <div class="statistic-card-value"><span>50+</span>Servers</div>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+      <div class="container">
+        <div class="features-img">
+          <img src="./images/Illustration 2.png" alt="Man in glasses and scholars work at the computer">
+        </div>
+        <div class="features-content">
+          <h2 class="title">We Provide Many Features You Can Use</h2>
+          <p class="subtitle">You can explore the features that we provide with fun and have their own
+            functions each feature.</p>
+          <ul class="features-list">
+            <li class="features-item">Powerfull online protection.</li>
+            <li class="features-item">Internet without borders.</li>
+            <li class="features-item">Supercharged VPN</li>
+            <li class="features-item">No specific time limits.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="pricing">
+      <div class="container">
+        <div class="pricing-texts">
+          <h2 class="title">Choose Your Plan</h2>
+          <p class="subtitle">Let's choose the package that is best for you and explore it happily and
+            cheerfully.</p>
+        </div>
+        <div class="pricing-table">
+          <article class="pricing-card">
+            <header class="pricing-card-header">
+              <img class="pricing-card-img" src="./images/Free.png" alt="Free plan">
+              <h3 class="pricing-card-name">Free plan</h3>
+            </header>
+            <ul class="pricing-card-features">
+              <li class="pricing-card-feature">Unlimited Bandwitch</li>
+              <li class="pricing-card-feature">Encrypted Connection</li>
+              <li class="pricing-card-feature">No Traffic Logs</li>
+              <li class="pricing-card-feature">Works on All Devices</li>
+            </ul>
+            <footer class="pricing-card-footer">
+              <p class="pricing-card-cost"><b>Free</b></p>
+              <button class="pricing-card-btn btn btn-outline" type="button">Select</button>
+            </footer>
+          </article>
+          <article class="pricing-card">
+            <header class="pricing-card-header">
+              <img class="pricing-card-img" src="./images/Standard.png" alt="Standard plan">
+              <h3 class="pricing-card-name">Standard plan</h3>
+            </header>
+            <ul class="pricing-card-features">
+              <li class="pricing-card-feature">Unlimited Bandwitch</li>
+              <li class="pricing-card-feature">Encrypted Connection</li>
+              <li class="pricing-card-feature">Yes Traffic Logs</li>
+              <li class="pricing-card-feature">Works on All Devices</li>
+              <li class="pricing-card-feature">Connect Anyware</li>
+            </ul>
+            <footer class="pricing-card-footer">
+              <p class="pricing-card-cost"><b>$9</b> / mo</p>
+              <button class="pricing-card-btn btn btn-outline" type="button">Select</button>
+            </footer>
+          </article>
+          <article class="pricing-card highlighted">
+            <header class="pricing-card-header">
+              <img class="pricing-card-img" src="./images/Premium.png" alt="Premium plan">
+              <h3 class="pricing-card-name">Premium plan</h3>
+            </header>
+            <ul class="pricing-card-features">
+              <li class="pricing-card-feature">Unlimited Bandwitch</li>
+              <li class="pricing-card-feature">Encrypted Connection</li>
+              <li class="pricing-card-feature">Yes Traffic Logs</li>
+              <li class="pricing-card-feature">Works on All Devices</li>
+              <li class="pricing-card-feature">Connect Anyware</li>
+              <li class="pricing-card-feature">Get New Features</li>
+            </ul>
+            <footer class="pricing-card-footer">
+              <p class="pricing-card-cost"><b>$12</b> / mo</p>
+              <button class="pricing-card-btn btn btn-outline" type="button">Select</button>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-container container">
+      <section class="subscribtion blur-shadow">
+        <div class="subscribtion-inner">
+          <div class="subscribtion-left">
+            <h2 class="title">Subscribe Now for Get Special Features!</h2>
+            <p class="subtitle">Let's subscribe with us and find the fun.</p>
+          </div>
+          <div class="subscribtion-right">
+            <button class="subscribtion-btn btn btn-primary" type="button">Subscribe Now</button>
+          </div>
+        </div>
+      </section>
+      <div class="footer-info-box">
+        <div class="logo"></div>
+        <p class="footer-text"><b>LaslesVPN</b> is a private virtual network that has unique features and has high
+          security.</p>
+        <span class="footer-copy">&copy;2020Lasles<b>VPN</b></span>
+      </div>
+      <nav class="footer-nav nav">
+        <div class="nav-col">
+          <h4 class="nav-title">Product</h4>
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">Download</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Locations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Server</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Countries</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="nav-col">
+          <h4 class="nav-title">Engage</h4>
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">LaslesVPN ?</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Tutorials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="nav-col">
+          <h4 class="nav-title">Earn Money</h4>
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">Affiliate</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Become Partner</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>
