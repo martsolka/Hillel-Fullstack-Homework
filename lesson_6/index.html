@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ДЗ 6. Figma \ Codext - Saas landing page</title>
+  <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css?family=Inter:regular,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- #region FIRST SCREEN -->
+  <section class="first-screen" id="first-screen">
+    <!-- #region HEADER -->
+    <header class="header">
+      <div class="header-container container relative">
+        <div class="header-logo logo"></div>
+        <input class="nav-check" type="checkbox" id="nav-check">
+        <label class="nav-toggler" for="nav-check">
+          <span class="sr-only">Menu toggler</span>
+          <span class="bar"></span>
+        </label>
+        <label class="nav-toggler close" for="nav-check">
+          <span class="sr-only">Menu close</span>
+          <span class="bar"></span>
+        </label>
+        <nav class="header-nav" aria-label="Primary" role="navigation">
+          <ul class="header-nav-list flex" role="list">
+            <li><a class="header-nav-link nav-link relative active" href="#!">Home</a></li>
+            <li><a class="header-nav-link nav-link relative" href="#services">Services</a></li>
+            <li><a class="header-nav-link nav-link relative" href="#pricing">Pricing</a></li>
+            <li><a class="header-nav-link nav-link relative" href="#testimonials">Testimonials</a></li>
+            <li><a class="header-nav-link nav-link relative" href="#blog">Blog</a></li>
+          </ul>
+        </nav>
+        <button class="header-cta btn btn-primary">Free trial</button>
+      </div>
+    </header>
+    <!-- #endregion HEADER -->
+
+    <div class="container relative">
+      <div class="first-screen-content relative">
+        <h1 class="first-screen-title">Codext one of&nbsp;the best system in&nbsp;SAAS.</h1>
+        <p class="first-screen-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. A nulla nulla etiam turpis quam diam et. Arcu nisi,
+          sed aenean sit nisl.
+        </p>
+        <a class="first-screen-cta btn btn-primary">Try A Live Demo</a>
+      </div>
+      <div class="first-screen-img"></div>
+    </div>
+  </section>
+  <!-- #endregion FIRST SCREEN -->
+
+  <!-- #region SYSTEM FEATURES -->
+  <section class="system-features section" id="system-features">
+    <div class="container relative">
+      <div class="system-features-content relative">
+        <div class="section-head">
+          <h2 class="h2">It's helpful for operating system</h2>
+        </div>
+        <ul class="system-features-list">
+          <li class="system-features-item relative">
+            <h3 class="system-features-item-title h3">Ultra fast &amp Secure</h3>
+            <p class="system-features-item-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              vitae velit proin justo, elementum siIn morbi </p>
+          </li>
+          <li class="system-features-item relative">
+            <h3 class="system-features-item-title h3">Allows customization</h3>
+            <p class="system-features-item-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              vitae velit proin justo, elementum siIn morbi </p>
+          </li>
+          <li class="system-features-item relative">
+            <h3 class="system-features-item-title h3">Smart contract</h3>
+            <p class="system-features-item-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              vitae velit proin justo, elementum siIn morbi </p>
+          </li>
+        </ul>
+      </div>
+      <div class="system-features-img"></div>
+    </div>
+  </section>
+  <!-- #endregion SYSTEM FEATURES -->
+
+  <!-- #region SERVICES -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">We Provides best Feature for&nbsp;customar</h2>
+      </div>
+      <div class="services-cards cards-row cards-col-4">
+        <article class="services-card flex relative active">
+          <header class="services-card-head">
+            <div class="services-card-icon"
+              style="--_icon-bg: rgba(203, 41, 41, 0.10);--_icon-url: url('../images/service-1.svg')"></div>
+          </header>
+          <main class="services-card-body">
+            <h3 class="services-card-title h3">Clean Code</h3>
+            <p class="services-card-descr">Lorem ipsum sit amet ecte adipiscing elitIpsum.</p>
+            <a class="services-card-cta" href="#!" aria-label="Learn more">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M1 16C1 24.2843 7.71573 31 16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 0.999999C7.71573 0.999999 1 7.71573 1 16Z"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.0004 20.0001L20.0004 16.0001L16.0004 12.0001" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M12.0004 16L20.0004 16" stroke="currentColor" stroke-linecap="currentColor"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </main>
+        </article>
+        <article class="services-card flex relative">
+          <header class="services-card-head">
+            <div class="services-card-icon"
+              style="--_icon-bg: rgba(191, 124, 22, 0.1);--_icon-url: url('../images/service-2.svg')"></div>
+          </header>
+          <main class="services-card-body">
+            <h3 class="services-card-title h3">Data Analytic</h3>
+            <p class="services-card-descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, fugiat?
+            </p>
+            <a class="services-card-cta" href="#!" aria-label="Learn more">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M1 16C1 24.2843 7.71573 31 16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 0.999999C7.71573 0.999999 1 7.71573 1 16Z"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.0004 20.0001L20.0004 16.0001L16.0004 12.0001" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M12.0004 16L20.0004 16" stroke="currentColor" stroke-linecap="currentColor"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </main>
+        </article>
+        <article class="services-card flex relative">
+          <header class="services-card-head">
+            <div class="services-card-icon"
+              style="--_icon-bg: rgba(20, 168, 159, 0.1);--_icon-url: url('../images/service-3.svg')"></div>
+          </header>
+          <main class="services-card-body">
+            <h3 class="services-card-title h3">Fully Secured</h3>
+            <p class="services-card-descr">Lorem dolor sit amet ecte adipiscing elitIpsum.</p>
+            <a class="services-card-cta" href="#!" aria-label="Learn more">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M1 16C1 24.2843 7.71573 31 16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 0.999999C7.71573 0.999999 1 7.71573 1 16Z"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.0004 20.0001L20.0004 16.0001L16.0004 12.0001" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M12.0004 16L20.0004 16" stroke="currentColor" stroke-linecap="currentColor"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </main>
+        </article>
+        <article class="services-card flex relative">
+          <header class="services-card-head">
+            <div class="services-card-icon"
+              style="--_icon-bg: rgba(147, 20, 168, 0.1);--_icon-url: url('../images/service-4.svg')"></div>
+          </header>
+          <main class="services-card-body">
+            <h3 class="services-card-title h3">24/7 Support</h3>
+            <p class="services-card-descr">Lorem ipsum dolor sit amet ecte adipiscing elitIpsum.</p>
+            <a class="services-card-cta" href="#!" aria-label="Learn more">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M1 16C1 24.2843 7.71573 31 16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 0.999999C7.71573 0.999999 1 7.71573 1 16Z"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.0004 20.0001L20.0004 16.0001L16.0004 12.0001" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M12.0004 16L20.0004 16" stroke="currentColor" stroke-linecap="currentColor"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </main>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion SERVICES -->
+
+  <!-- #region PRICING PLANS -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <input class="pricing-toggle-check" type="checkbox" id="pricing-toggle-check" checked>
+      <div class="section-head">
+        <h2 class="h2">Choose your best pricing plan</h2>
+        <label class="pricing-toggle-label" for="pricing-toggle-check">
+          <span>Added for</span>
+          <span data-toggle="mo">Monthly</span>
+          <span class="pricing-toggle-slider"></span>
+          <span data-toggle="ye">Yearly</span>
+        </label>
+      </div>
+      <div class="pricing-table cards-row-scroll cards-col-3">
+        <article class="pricing-card flex-col relative">
+          <header class="pricing-card-head">
+            <h4 class="pricing-card-name h4">Start-up</h4>
+            <p class="pricing-card-cost">
+              <span class="h2" data-period="mo">$10</span>
+              <span class="h2" data-period="ye">$108</span>
+            </p>
+          </header>
+          <main class="price-card-body flex-col">
+            <ul class="pricing-card-features flex-col">
+              <li class="pricing-card-feature">Easy Customizable</li>
+              <li class="pricing-card-feature">Commercia license</li>
+              <li class="pricing-card-feature">Singal user license</li>
+              <li class="pricing-card-feature">Hotline support 24/7</li>
+            </ul>
+            <a class="pricing-card-btn btn btn-secondary" href="#!">Try this package</a>
+          </main>
+        </article>
+        <article class="pricing-card flex-col relative active">
+          <header class="pricing-card-head">
+            <h4 class="pricing-card-name h4">Classic</h4>
+            <p class="pricing-card-cost">
+              <span class="h2" data-period="mo">$30</span>
+              <span class="h2" data-period="ye">$324</span>
+            </p>
+          </header>
+          <main class="price-card-body flex-col">
+            <ul class="pricing-card-features flex-col">
+              <li class="pricing-card-feature">Easy Customizable</li>
+              <li class="pricing-card-feature">Commercia license</li>
+              <li class="pricing-card-feature">5 user license</li>
+              <li class="pricing-card-feature">Hotline support 24/7</li>
+            </ul>
+            <a class="pricing-card-btn btn btn-primary" href="#!">Try this package</a>
+          </main>
+        </article>
+        <article class="pricing-card flex-col relative">
+          <header class="pricing-card-head">
+            <h4 class="pricing-card-name h4">Premium</h4>
+            <p class="pricing-card-cost">
+              <span class="h2" data-period="mo">$49</span>
+              <span class="h2" data-period="ye">$532</span>
+            </p>
+          </header>
+          <main class="price-card-body flex-col">
+            <ul class="pricing-card-features flex-col">
+              <li class="pricing-card-feature">Easy Customizable</li>
+              <li class="pricing-card-feature">Commercia license</li>
+              <li class="pricing-card-feature">10 user license</li>
+              <li class="pricing-card-feature">Hotline support 24/7</li>
+            </ul>
+            <a class="pricing-card-btn btn btn-secondary" href="#!">Try this package</a>
+          </main>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion PRICING PLANS -->
+
+  <!-- #region TESTIMONIALS -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Let’s see our User’s Review</h2>
+        <p class="section-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque tellus interdum venenatis auctor
+          etnibh. Rhoncus a, sed lobortis nisi.
+        </p>
+      </div>
+      <div class="testimonials-slider cards-row-scroll cards-col-3">
+        <article class="testimonials-card flex-col relative active">
+          <blockquote class="testimonials-card-quote">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut possimus laudantium repellat maxime
+            recusandae soluta quas aliquid, sunt consequatur iure.
+          </blockquote>
+          <div class="testimonials-card-author">
+            <div class="testimonials-card-author-pic" style="--_img: url('../images/testimonial-author-1.jpg');">
+            </div>
+            <div class="testimonials-card-author-details">
+              <h5 class="testimonials-card-author-name h5">Wilson Bergson</h5>
+              <span class="testimonials-card-author-position">Marketing manager</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonials-card flex-col relative">
+          <blockquote class="testimonials-card-quote">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut possimus laudantium repellat maxime
+            recusandae soluta quas aliquid, sunt consequatur iure.
+          </blockquote>
+          <div class="testimonials-card-author">
+            <div class="testimonials-card-author-pic" style="--_img: url('../images/testimonial-author-2.jpg');">
+            </div>
+            <div class="testimonials-card-author-details">
+              <h5 class="testimonials-card-author-name h5">Zaire Aminoff</h5>
+              <span class="testimonials-card-author-position">Marketing manager</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonials-card flex-col relative">
+          <blockquote class="testimonials-card-quote">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut possimus laudantium repellat maxime
+            recusandae soluta quas aliquid, sunt consequatur iure.
+          </blockquote>
+          <div class="testimonials-card-author">
+            <div class="testimonials-card-author-pic" style="--_img: url('../images/testimonial-author-3.jpg');">
+            </div>
+            <div class="testimonials-card-author-details">
+              <h5 class="testimonials-card-author-name h5">Ryan Press</h5>
+              <span class="testimonials-card-author-position">Marketing manager</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonials-card flex-col relative">
+          <blockquote class="testimonials-card-quote">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut possimus laudantium repellat maxime
+            recusandae soluta quas aliquid, sunt consequatur iure.
+          </blockquote>
+          <div class="testimonials-card-author">
+            <div class="testimonials-card-author-pic" style="--_img: url('../images/testimonial-author-2.jpg');">
+            </div>
+            <div class="testimonials-card-author-details">
+              <h5 class="testimonials-card-author-name h5">Zaire Aminoff</h5>
+              <span class="testimonials-card-author-position">Marketing manager</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonials-card flex-col relative">
+          <blockquote class="testimonials-card-quote">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut possimus laudantium repellat maxime
+            recusandae
+            soluta quas aliquid, sunt consequatur iure.
+          </blockquote>
+          <div class="testimonials-card-author">
+            <div class="testimonials-card-author-pic" style="--_img: url('../images/testimonial-author-3.jpg');">
+            </div>
+            <div class="testimonials-card-author-details">
+              <h5 class="testimonials-card-author-name h5">Ryan Press</h5>
+              <span class="testimonials-card-author-position">Marketing manager</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion TESTIMONIALS -->
+
+  <!-- #region BLOG -->
+  <section class="blog section" id="blog">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="h2">Lastest insights news</h2>
+      </div>
+      <div class="blog-cards cards-row cards-col-2">
+        <article class="blog-card flex-col relative">
+          <header class="blog-card-head">
+            <img class="blog-card-image" src="images/blog-1.jpg" alt="Our Creative Team" />
+          </header>
+          <main class="blog-card-body">
+            <div class="blog-card-meta">
+              <p class="blog-card-caption">Our Creative Team</p>
+              <time class="blog-card-date" datetime="2021-06-17">June 17, 2021</time>
+              <a class="blog-card-author" href="#!">by Stive Smithi</a>
+            </div>
+            <h4 class="blog-card-title h4 line-clamp">Running remote offsites and onbordings</h4>
+            <p class="blog-card-excerpt line-clamp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat fermentum, enim vel adipiscing non.
+              Lacus, nunc, at et
+              vel tellus dignissim quis.
+            </p>
+          </main>
+          <footer class="blog-card-foot">
+            <a class="blog-card-cta btn btn-primary btn-sm" href="#!">Continue</a>
+          </footer>
+        </article>
+        <article class="blog-card flex-col relative">
+          <header class="blog-card-head">
+            <img class="blog-card-image" src="images/blog-2.jpg" alt="Create presentations" />
+          </header>
+          <main class="blog-card-body">
+            <div class="blog-card-meta">
+              <p class="blog-card-caption">Create presentations</p>
+              <time class="blog-card-date" datetime="2021-06-17">June 17, 2021</time>
+              <a class="blog-card-author" href="#!">by Thomas lews</a>
+            </div>
+            <h4 class="blog-card-title h4 line-clamp">A new look &amp; new ways to collaborate</h4>
+            <p class="blog-card-excerpt line-clamp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat fermentum, enim vel adipiscing non.
+              Lacus, nunc, at et vel tellus dignissim quis. Lorem ipsum dolor, sit amet consectetur adipisicing. Lorem
+              ipsum dolor sit amet.
+            </p>
+          </main>
+          <footer class="blog-card-foot">
+            <a class="blog-card-cta btn btn-primary btn-sm" href="#!">Continue</a>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion BLOG -->
+
+  <!-- #region FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top flex">
+        <div class="footer-info-box">
+          <div class="footer-logo logo"></div>
+          <p class="footer-descr">
+            Lorem ipsum dolor sit amet, consect
+            etur adipiscing elit. Ullamcorper purus eleifend purus faucibus faucibus.
+          </p>
+          <ul class="footer-social-links flex" aria-label="Social links" role="list">
+            <li>
+              <a class="footer-social-link" href="https://twitter.com/" target="_blank" aria-label="twitter">
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <circle opacity="0.1" cx="20.5" cy="20.4999" r="20" stroke="currentColor" />
+                  <path
+                    d="M27.3334 15.0401C26.679 15.5017 25.9545 15.8547 25.1877 16.0856C24.7762 15.6124 24.2292 15.277 23.6209 15.1248C23.0125 14.9725 22.372 15.0108 21.7861 15.2345C21.2002 15.4581 20.6972 15.8562 20.3449 16.3751C19.9927 16.894 19.8083 17.5085 19.8167 18.1356V18.8189C18.6158 18.85 17.4259 18.5837 16.3529 18.0436C15.2799 17.5035 14.3571 16.7065 13.6667 15.7234C13.6667 15.7234 10.9334 21.8734 17.0834 24.6067C15.6761 25.562 13.9996 26.041 12.3 25.9734C18.45 29.3901 25.9667 25.9734 25.9667 18.1151C25.9661 17.9247 25.9478 17.7349 25.912 17.5479C26.6095 16.8601 27.1016 15.9918 27.3334 15.0401V15.0401Z"
+                    stroke="currentColor" stroke-width="1.36667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" aria-label="facebook">
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <circle opacity="0.1" cx="20.5" cy="20.4999" r="20" stroke="currentColor" />
+                  <path
+                    d="M23.9164 13.6665H21.8664C20.9603 13.6665 20.0912 14.0265 19.4505 14.6672C18.8097 15.308 18.4498 16.177 18.4498 17.0832V19.1332H16.3998V21.8665H18.4498V27.3332H21.1831V21.8665H23.2331L23.9164 19.1332H21.1831V17.0832C21.1831 16.9019 21.2551 16.7281 21.3833 16.6C21.5114 16.4718 21.6852 16.3998 21.8664 16.3998H23.9164V13.6665Z"
+                    stroke="currentColor" stroke-width="1.36667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="footer-social-link" href="https://instagram.com/" target="_blank" aria-label="twitter">
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <circle opacity="0.1" cx="20.5" cy="20.4999" r="20" stroke="currentColor" />
+                  <path
+                    d="M23.9169 13.6665H17.0835C15.1966 13.6665 13.6669 15.1962 13.6669 17.0832V23.9165C13.6669 25.8035 15.1966 27.3332 17.0835 27.3332H23.9169C25.8038 27.3332 27.3335 25.8035 27.3335 23.9165V17.0832C27.3335 15.1962 25.8038 13.6665 23.9169 13.6665Z"
+                    stroke="currentColor" stroke-width="1.36667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M23.2331 20.0692C23.3175 20.6379 23.2203 21.2187 22.9555 21.729C22.6907 22.2394 22.2718 22.6532 21.7582 22.9117C21.2447 23.1701 20.6627 23.2601 20.0951 23.1688C19.5275 23.0774 19.0031 22.8094 18.5966 22.4029C18.1901 21.9964 17.9221 21.472 17.8307 20.9044C17.7394 20.3368 17.8294 19.7548 18.0878 19.2413C18.3463 18.7277 18.7602 18.3088 19.2705 18.044C19.7808 17.7792 20.3616 17.6821 20.9303 17.7664C21.5104 17.8524 22.0474 18.1227 22.4621 18.5374C22.8768 18.9521 23.1471 19.4891 23.2331 20.0692Z"
+                    stroke="currentColor" stroke-width="1.36667" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M24.2584 16.7412H24.2649" stroke="currentColor" stroke-width="1.36667" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+              </a>
+            </li>
+            <li>
+              <a class="footer-social-link" href="https://linkedin.com/" target="_blank" aria-label="twitter">
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <circle opacity="0.1" cx="20.5" cy="20.4999" r="20" stroke="currentColor" />
+                  <path
+                    d="M23.7997 18.1995C24.9136 18.1995 25.9819 18.642 26.7696 19.4296C27.5572 20.2173 27.9997 21.2856 27.9997 22.3995V27.2995H25.1997V22.3995C25.1997 22.0282 25.0522 21.6721 24.7897 21.4095C24.5271 21.147 24.171 20.9995 23.7997 20.9995C23.4284 20.9995 23.0723 21.147 22.8098 21.4095C22.5472 21.6721 22.3997 22.0282 22.3997 22.3995V27.2995H19.5997V22.3995C19.5997 21.2856 20.0422 20.2173 20.8299 19.4296C21.6175 18.642 22.6858 18.1995 23.7997 18.1995V18.1995Z"
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16.8 18.9001H14V27.3001H16.8V18.9001Z" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M15.4 16.7999C16.1732 16.7999 16.8 16.1731 16.8 15.3999C16.8 14.6267 16.1732 13.9999 15.4 13.9999C14.6268 13.9999 14 14.6267 14 15.3999C14 16.1731 14.6268 16.7999 15.4 16.7999Z"
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <nav class="footer-nav flex" aria-label="Footer" role="navigation">
+          <ul class="footer-nav-list" role="list">
+            <li>
+              <h4 class="footer-title h4">Resources</h4>
+            </li>
+            <li><a class="footer-nav-link nav-link relative" href="#services">Services</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#pricing">Pricing</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#testimonials">Testimonials</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#blog">Blog</a></li>
+          </ul>
+
+          <ul class="footer-nav-list" role="list">
+            <li>
+              <h4 class="footer-title h4">Usefull links</h4>
+            </li>
+            <li><a class="footer-nav-link nav-link relative" href="#!">Terms of Services</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#!">Privacy Policy</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#!">Cookie Policy</a></li>
+            <li><a class="footer-nav-link nav-link relative" href="#!">Contact us</a></li>
+          </ul>
+        </nav>
+        <div class="footer-newsletter">
+          <h4 class="footer-title h4">Newsletter</h4>
+          <p class="newsletter-text">Sign up and receive the latest news via email.</p>
+          <form class="newsletter-form" action="#">
+            <input class="newsletter-form-input" type="email" placeholder="Email address">
+            <button class="newsletter-form-btn btn btn-primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">Copyright 2023 The Codext All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+  <!-- #endregion FOOTER //-->
+</body>
+
+</html>
