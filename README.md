@@ -1,4 +1,7 @@
+<base target="_blank">
+
 <style>img {vertical-align:middle;}</style>
+
 ---
 <h1 style="text-align: center;">Fullstack Course by <img src="./hillel.svg" alt="Hillel IT School Logo" style="vertical-align:baseline;" /></h1>
 
