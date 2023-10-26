@@ -1,0 +1,100 @@
+:root {
+    --main-color: 0 0 0;
+    --second-color: 230, 230, 230;
+    --accent-color: 74, 31, 165;
+    --body-color: 255, 255, 255;
+    --text-color: 14, 14, 14;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: rgb(var(--body-color));
+    color: rgb(var(--text-color));
+}
+
+a {
+    color: rgb(var(--accent-color));
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: rgba(var(--accent-color), 0.7);
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.post {
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.post h1,
+.post h2,
+.post h3 {
+    color: rgb(var(--main-color));
+}
+
+.post-header {
+    margin-bottom: 24px;
+}
+
+.post-content :last-child {
+    margin-bottom: 0;
+}
+
+.post-topic {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.post-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.post-tag {
+    display: inline-block;
+    background-color: rgb(var(--second-color));
+    font-size: 17px;
+    font-weight: 700;
+    padding: 4px;
+    margin-right: 5px;
+}
+
+.post-tag a {
+    color: rgb(var(--main-color));
+}
+
+.post-intro {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 2;
+    border-left: 5px solid rgb(var(--accent-color));
+    padding-left: 18px;
+    padding-right: 10px;
+    margin-bottom: 25px;
+}
+
+.post-paragraph {
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 24px;
+}
+
+.post-paragraph a {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.post-heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
