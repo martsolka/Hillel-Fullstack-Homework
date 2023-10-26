@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ДЗ 4. Навігація та форма</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header-nav nav">
+      <ul class="header-nav-list nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Gallery</a>
+          <ul class="nav-sublist">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sublink home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sublink gallery</a>
+              <ul class="nav-sublist">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sub-sublink-home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sub-sublink-gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sub-sublink-contacts</a>
+                  <ul class="nav-sublist">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sub-sub-sublink-1</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sub-sub-sublink-2</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sub-sub-sublink-3</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sub-sub-sublink-3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sub-sublink-about</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sub-sublink-support</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sublink contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sublink about us</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Support</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="banner-section"></section>
+    <section class="form-section">
+      <div class="container">
+        <h2 class="form-title">Registration form</h2>
+        <form action="#" method="post">
+          <label class="form-label">
+            <span>Name<sup>*</sup></span>
+            <input class="form-input" type="text" name="name" placeholder="Name" required>
+          </label>
+          <label class="form-label">
+            <span>Email<sup>*</sup></span>
+            <input class="form-input" type="email" name="email" placeholder="Email" required>
+          </label>
+          <label class="form-label">
+            <span>Login<sup>*</sup></span>
+            <input class="form-input" type="text" name="login" placeholder="Login" required>
+          </label>
+          <label class="form-label">
+            <span>Password<sup>*</sup></span>
+            <input class="form-input" type="password" name="password" placeholder="Password" required>
+          </label>
+          <label class="form-label">
+            <span>Avatar</span>
+            <input class="form-file-input" type="file" name="avatar" accept=".png, .jpg">
+          </label>
+          <label class="form-label">
+            <span>Country</span>
+            <select class="form-select" name="country">
+              <option value="ca">Canada</option>
+              <option value="de">Germany</option>
+              <option value="ua" selected>Ukraine</option>
+              <option value="us">United States</option>
+              <option value="fr">France</option>
+            </select>
+          </label>
+
+          <label class="form-label">
+            <span>Gender</span>
+            <label>
+              Male
+              <input class="form-radio-input" type="radio" name="gender" value="male">
+            </label>
+            <label>
+              Female
+              <input class="form-radio-input" type="radio" name="gender" value="female">
+            </label>
+          </label>
+          <label class="form-label">
+            <span>Grade</span>
+            <label>
+              Junior
+              <input class="form-check-input" type="checkbox" name="grade[]" value="junior">
+            </label>
+            <label>
+              Middle
+              <input class="form-check-input" type="checkbox" name="grade[]" value="middle">
+            </label>
+            <label>
+              Senior
+              <input class="form-check-input" type="checkbox" name="grade[]" value="senior">
+            </label>
+          </label>
+          <button class="form-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <nav class="footer-nav nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+</html>

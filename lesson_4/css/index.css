@@ -1,0 +1,186 @@
+/*#region BASE styles */
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* #endregion */
+
+/*#region NAV styles */
+.nav-list,
+.nav-sublist {
+    background-color: #623bed;
+    color: #fff;
+    font-size: 0;
+}
+
+.nav-list>.nav-item {
+    display: inline-block;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s linear;
+}
+
+.nav-link::after {
+    content: "▼";
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 0.7em;
+    transition: transform 0.2s linear;
+}
+
+.nav-sublist .nav-link::after {
+    content: "►";
+    transform-origin: right;
+}
+
+.nav-link:only-child:after {
+    content: "";
+}
+
+.nav-sublist {
+    position: absolute;
+    width: max-content;
+    display: none;
+}
+
+.nav-sublist .nav-sublist {
+    top: 0;
+    left: 100%;
+}
+
+.nav-item:hover>.nav-sublist {
+    display: block;
+}
+
+.nav-item:hover>.nav-link::after {
+    transform: rotate(-180deg);
+}
+
+/* #endregion */
+
+/*#region HEADER styles */
+.header-nav-list .nav-link:hover {
+    background-color: #1739a9;
+}
+
+.header-nav-list>.nav-item:not(:where(:first-child, :last-child)) {
+    border-left: 1px solid #fff;
+}
+
+.header-nav-list>.nav-item:last-child {
+    float: right;
+}
+
+.header-nav {
+    text-transform: uppercase;
+}
+
+/* #endregion */
+
+/*#region BANNER SECTION styles */
+.banner-section {
+    height: 70vh;
+    background-image: url('../images/hillel-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 45px;
+}
+
+/* #endregion */
+
+/*#region FORM SECTION styles */
+.form-section {
+    margin-bottom: 60px;
+}
+
+.form-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.form-label span {
+    display: inline-block;
+    width: 40%;
+    font-weight: 600;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.form-label sup {
+    display: inline-block;
+    color: red;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.form-input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #623bed;
+    padding: 5px;
+    font-weight: 500;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+    border-color: #1739a9;
+}
+
+::placeholder {
+    font-size: 14px;
+}
+
+.form-btn {
+    display: block;
+    margin-inline: auto;
+    padding: 5px 10px;
+    color: #623bed;
+    background-color: transparent;
+    border: 1px solid #623bed;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.form-btn:hover {
+    color: #fff;
+    background-color: #623bed;
+}
+/* #endregion */
+
+/*#region FOOTER styles */
+.footer-nav {
+    text-align: center;
+}
+
+.footer-nav .nav-link {
+    padding: 20px;
+}
+
+.footer-nav .nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+/* #endregion */
