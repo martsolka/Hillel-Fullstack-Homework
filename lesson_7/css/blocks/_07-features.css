@@ -1,0 +1,72 @@
+.features .container>.row {
+  row-gap: var(--sp-xl);
+}
+
+.features .card .badge {
+  padding: 26px;
+  color: #fff;
+  margin-right: var(--sp-md);
+  box-shadow: none;
+}
+
+.features .card {
+  border-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.features .card:is(:hover, :focus) {
+  border-color: var(--border-clr);
+}
+
+.features-collage {
+  position: relative;
+  padding-top: var(--sp-lg);
+}
+
+.features-collage .badge {
+  position: absolute;
+  top: 10%;
+  left: 45%;
+}
+
+.features-collage :is(.collage-img-1, .collage-img-2) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius-xl);
+}
+
+.features-collage .collage-img-1 {
+  max-width: 443px;
+  aspect-ratio: 2/3;
+  /* height: 665px; */
+  position: relative;
+}
+
+.features-collage .collage-img-1::before {
+  content: "";
+  position: absolute;
+  width: min(100%, 478px);
+  aspect-ratio: 7/4;
+  /* height: 272px; */
+  background: url(../../img/decors/bg-decor-3.svg) center / contain no-repeat;
+  left: 60%;
+  top: -10%;
+  z-index: -1;
+}
+
+.features-collage .collage-img-2 {
+  max-width: 350px;
+  aspect-ratio: 7/10;
+  /* height: 496px; */
+  margin-top: -60%;
+  outline: clamp(12px, 3vw, 24px) solid var(--bs-body-bg);
+  position: relative;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .features-collage {
+    margin-inline: 14vw;
+  }
+}

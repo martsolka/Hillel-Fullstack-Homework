@@ -1,0 +1,142 @@
+.first-screen .container::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  background: rgba(var(--bs-danger-rgb), 0.5);
+  filter: blur(250px);
+  z-index: -1;
+  left: 0;
+  transform: translate(-100%, -70%);
+}
+
+.first-screen .container::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 170px;
+  background: url(../../img/decors/bg-decor-1.svg) top / contain no-repeat;
+  left: -25px;
+  top: 92%;
+  transform: translateX(-100%);
+}
+
+.first-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 43px;
+}
+
+.first-screen-ctas {
+  display: flex;
+  gap: 24px 16px;
+}
+
+.first-screen-ctas .btn-primary {
+  box-shadow: var(--box-shad-btn);
+}
+
+.first-screen-images {
+  padding-top: 75px;
+  padding-left: 91px;
+  padding-right: 106px;
+  background: url(../../img/decors/bg-airplanes.svg) top / contain no-repeat;
+}
+
+.first-screen-images img {
+  max-width: 272px;
+  border-radius: var(--radius-md);
+}
+
+.first-screen-images .badge {
+  position: absolute;
+}
+
+.first-screen-images .vstack:first-of-type {
+  row-gap: 31px;
+}
+
+.first-screen-images .vstack:first-of-type .badge {
+  top: 42%;
+  left: -12%;
+}
+
+.first-screen-images .vstack:last-of-type .badge.rounded-circle {
+  bottom: 0;
+  left: 25%;
+}
+
+.first-screen-images .vstack:last-of-type .badge:not(.rounded-circle) {
+  right: -30%;
+  top: 64%;
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .first-screen-images {
+    padding-left: 80px;
+    padding-right: 90px;
+  }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .first-screen-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .first-screen-images {
+    margin-bottom: var(--sp-lg);
+  }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .first-screen-content {
+    row-gap: 0;
+  }
+
+  .first-screen-images {
+    padding-top: 42px;
+    padding-left: 38px;
+    padding-right: 55px;
+  }
+
+  .first-screen-images {
+    margin-bottom: 44px;
+  }
+
+  .first-screen-images .badge .icon-md {
+    font-size: 24px;
+  }
+
+  .first-screen-images .vstack:last-of-type .badge:not(.rounded-circle) {
+    padding-inline: 16px;
+    font-size: 12px;
+    right: -20%;
+  }
+
+  .first-screen-images .vstack:first-of-type {
+    row-gap: 16px;
+  }
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 449.98px) {
+  .first-screen-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .first-screen-images .badge .icon {
+    font-size: 16px;
+  }
+
+  .first-screen-images .vstack:last-of-type .badge:not(.rounded-circle) {
+    padding-block: 8px;
+    font-size: 8px;
+  }
+}

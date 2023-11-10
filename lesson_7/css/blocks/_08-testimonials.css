@@ -1,0 +1,55 @@
+.testimonial-item *:not(:where(.title-medium, .icon)) {
+  margin-bottom: 56px;
+}
+
+.testimonial-item img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.testimonials .carousel-indicators [data-bs-target] {
+  background-color: rgba(var(--clr-darken-rgb), 0.5);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 0 8px;
+  border: none;
+}
+
+.testimonials .carousel-indicators .active {
+  background-color: rgba(var(--bs-secondary-rgb), 1);
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+  .testimonials .carousel-controls {
+    position: absolute;
+    top: 50%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .testimonials .container::before {
+    content: "";
+    position: absolute;
+    width: 2427px;
+    height: 959px;
+    background-image: url(../../img/decors/bg-decor-4.svg);
+    background-repeat: no-repeat;
+    rotate: -9deg;
+    opacity: 0.1;
+    top: -20%;
+    left: 0;
+    translate: -38%;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .testimonials .container::before {
+    translate: -30%;
+  }
+}

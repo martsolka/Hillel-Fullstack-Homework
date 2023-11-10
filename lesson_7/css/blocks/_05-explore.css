@@ -1,0 +1,14 @@
+.explore .carousel-item>.row {
+  row-gap: var(--sp-md);
+}
+
+.explore .card {
+  border: none;
+  color: rgba(var(--clr-darken-rgb), 0.75);
+  box-shadow: var(--box-shad-card-2);
+}
+
+.explore .carousel-inner {
+  padding-bottom: 200px;
+  margin-bottom: -200px;
+}

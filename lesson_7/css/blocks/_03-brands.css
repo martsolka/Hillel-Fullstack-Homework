@@ -1,0 +1,15 @@
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+  .brands .container::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+    background: rgba(var(--bs-warning-rgb), 0.5);
+    filter: blur(250px);
+    z-index: -1;
+    right: -50%;
+    top: -110px;
+  }
+}

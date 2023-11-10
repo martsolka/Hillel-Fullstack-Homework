@@ -1,0 +1,163 @@
+/* #region CUSTOM GLOBAL VARIABLES: */
+:root {
+  /* colors: */
+  --clr-primary: #5f52c7;
+  --clr-primary-dark: #3E329A;
+  --clr-primary-light: #8278D3;
+  --clr-light: #eeeeee;
+  --clr-dark: #222831;
+  --clr-darken: #191825;
+  --clr-darken-rgb: 25, 24, 37;
+  --clr-primary-rgb: 95, 82, 199;
+  --clr-secondary-rgb: 248, 94, 159;
+  --clr-yellow-rgb: 250, 205, 71;
+  --clr-orange-rgb: 255, 87, 36;
+
+  /* font families: */
+  --ff-primary: "Inter", sans-serif;
+  /* --ff-accent: "", serif; */
+
+  /* font sizes: */
+  --fs-headline-lg: 64px;
+  --fs-headline-md: 55px;
+  --fs-headline-sm: 44px;
+  --fs-subhead: 23px;
+  --fs-title-lg: 35px;
+  --fs-title-md: 28px;
+  --fs-title-sm: 23px;
+  --fs-body-lg: 23px;
+  --fs-body-md: 18px;
+  --fs-label-md: 14px;
+
+  /* line heights: */
+  --lh-headline-lg: 1.2;
+  --lh-headline-md: 1.2;
+  --lh-headline-sm: 1.2;
+  --lh-subhead: 1.2;
+  --lh-title-lg: 1.2;
+  --lh-title-md: 1.2;
+  --lh-title-sm: 1.2;
+  --lh-body-lg: 1.6;
+  --lh-body-md: 1.6;
+  --lh-label-md: 1.2;
+
+  /* font weights: */
+  --fw-headline-lg: 700;
+  --fw-headline-md: 700;
+  --fw-headline-sm: 700;
+  --fw-subhead: 700;
+  --fw-title-lg: 700;
+  --fw-title-md: 700;
+  --fw-title-sm: 700;
+  --fw-body-lg: 300;
+  --fw-body-md: 400;
+  --fw-label-md: 700;
+
+  /* spacing: */
+  --sp-sm: 16px;
+  --sp-md: 32px;
+  --sp-lg: 64px;
+  --sp-xl: 70px;
+  --sp-xxl: 128px;
+  --sp-letter: 4.6px;
+
+  /* borders: */
+  --border-clr: rgba(var(--clr-darken-rgb), 0.1);
+  --radius-md: 32px;
+  --radius-lg: 100px;
+  --radius-xl: 500px;
+
+  /* shadows: */
+  --box-shad-card-1:
+    0px 0px 0px 0px rgba(0, 0, 0, 0.10),
+    0px 41px 89px 0px rgba(0, 0, 0, 0.10);
+  --box-shad-card-2:
+    0px 0px 0px 0px rgba(0, 0, 0, 0.05),
+    0px 32px 71px 0px rgba(0, 0, 0, 0.05),
+    0px 128px 128px 0px rgba(0, 0, 0, 0.04);
+  --box-shad-btn:
+    0px 0px 0px 0px rgba(0, 0, 0, 0.10),
+    0px 5px 11px 0px rgba(0, 0, 0, 0.10),
+    0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+    0px 45px 27px 0px rgba(0, 0, 0, 0.05),
+    0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+    0px 126px 35px 0px rgba(0, 0, 0, 0.00);
+  --box-shad-badge:
+    0px 0px 0px 0px rgba(0, 0, 0, 0.07),
+    0px 34px 75px 0px rgba(0, 0, 0, 0.07),
+    0px 137px 137px 0px rgba(0, 0, 0, 0.06),
+    0px 308px 185px 0px rgba(0, 0, 0, 0.04),
+    0px 548px 219px 0px rgba(0, 0, 0, 0.01),
+    0px 856px 240px 0px rgba(0, 0, 0, 0.00);
+  --box-shad-badge-circle: 0px 19px 19px 0px rgba(0, 0, 0, 0.09),
+    0px 43px 26px 0px rgba(0, 0, 0, 0.05),
+    0px 77px 31px 0px rgba(0, 0, 0, 0.01),
+    0px 120px 34px 0px rgba(0, 0, 0, 0.00);
+  --drop-shad:
+    drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.08)) drop-shadow(0px 7px 16px rgba(0, 0, 0, 0.07)) drop-shadow(0px 29px 29px rgba(0, 0, 0, 0.06)) drop-shadow(0px 65px 39px rgba(0, 0, 0, 0.04)) drop-shadow(0px 116px 46px rgba(0, 0, 0, 0.01)) drop-shadow(0px 181px 51px rgba(0, 0, 0, 0.00));
+
+  /* other: */
+  --carousel-control-w: 100px;
+  --header-py: 32px;
+  --btn-py: 16px;
+  --btn-px: 32px;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  :root {
+    --fs-headline-lg: 56px;
+    --fs-headline-md: 48px;
+    --fs-headline-sm: 44px;
+    --fs-title-md: 26px;
+  }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  :root {
+    --fs-headline-lg: 46px;
+    --fs-headline-md: 40px;
+    --fs-headline-sm: 32px;
+    --fs-title-md: 24px;
+    --fs-subhead: 18px;
+    --sp-lg: 32px;
+    --sp-xl: 64px;
+    --sp-xxl: 90px;
+    --header-py: 16px;
+    --carousel-control-w: 64px;
+  }
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 449.98px) {
+  :root {
+    --fs-headline-lg: 40px;
+    --fs-headline-md: 32px;
+    --fs-subhead: 16px;
+    --fs-body-lg: 18px;
+    --sp-letter: 3.2px;
+    --sp-xxl: 64px;
+    --btn-py: 24px;
+  }
+}
+
+/* #endregion CUSTOM GLOBAL VARIABLES */
+
+/* #region BOOTSTRAP OVERRIDES */
+:root {
+  --bs-body-font-family: var(--ff-primary);
+  --bs-body-font-size: var(--fs-body-md);
+  --bs-body-line-height: var(--lh-body-md);
+  --bs-body-color: rgba(var(--clr-darken-rgb), 0.5);
+  --bs-heading-color: var(--clr-darken);
+  --bs-link-hover-color: var(--clr-primary);
+  --bs-dark-rgb: var(--clr-darken-rgb);
+  --bs-secondary-rgb: var(--clr-secondary-rgb);
+  --bs-warning-rgb: var(--clr-yellow-rgb);
+  --bs-info-rgb: var(--clr-orange-rgb);
+  --bs-border-color: var(--border-clr);
+  --bs-border-color-translucent: var(--border-clr);
+}
+
+/* #endregion BOOTSTRAP OVERRIDES */

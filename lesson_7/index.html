@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ДЗ 7. Вступ до Bootstrap</title>
+  <link rel="shortcut icon" type="image/svg+xml" href="./img/logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,regular,700,900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!-- #region HEADER -->
+  <header class="header sticky-top shadow-sm">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-md-7 col-lg-auto col-xl-3 hstack justify-content-between">
+          <a class="logo" href="./" data-aos="fade-right">
+            <img src="./img/logo-icon.svg" alt="Travlog logo icon" width="40" height="40">
+            <span>Travlog</span>
+          </a>
+          <button class="btn btn-outline p-2 rounded-4 d-lg-none order-md-first" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav"
+            aria-label="Toggle main navigation">
+            <span class="icon icon-menu icon-md"></span>
+          </button>
+        </div>
+        <div class="offcanvas-lg offcanvas-start col-12 col-md-auto justify-content-center mb-md-0" tabindex="-1"
+          id="mainNav" aria-labelledby="mainNavLabel">
+          <div class="offcanvas-header text-dark">
+            <a class="logo" href="./">
+              <img src="./img/logo-icon.svg" alt="Travlog logo icon" width="40" height="40">
+              <span>Travlog</span>
+            </a>
+            <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas" data-bs-target="#mainNav"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body vstack row-gap-md">
+            <nav class="nav flex-column flex-lg-row text-center flex-grow-1 justify-content-center">
+              <a class="nav-link label-medium active" aria-current="page" href="#!" data-aos="fade-up"
+                data-aos-delay="100">Home</a>
+              <a class="nav-link label-medium" href="#!" data-aos="fade-up" data-aos-delay="200">Discover</a>
+              <a class="nav-link label-medium" href="#!" data-aos="fade-up" data-aos-delay="300">Special Deals</a>
+              <a class="nav-link label-medium" href="#!" data-aos="fade-up" data-aos-delay="400">Contact</a>
+            </nav>
+            <div class="vstack gap-2 w-75 mx-auto justify-content-end d-lg-none">
+              <button type="button" class="btn">Log in</button>
+              <button type="button" class="btn btn-primary">Sign up</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto col-xl-3 d-none d-md-block text-end">
+          <button type="button" class="btn" data-aos="fade-left" data-aos-delay="400">Log in</button>
+          <button type="button" class="btn btn-primary" data-aos="fade-left" data-aos-delay="500">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- #endregion HEADER -->
+
+  <!-- #region MAIN -->
+  <main class="overflow-hidden">
+    <!-- #region FIRST SCREEN -->
+    <section class="first-screen section">
+      <div class="container position-relative">
+        <div class="row align-items-center justify-content-between">
+          <div class="first-screen-content col-12 col-lg-5 col-xxl-4">
+            <div class="badge text-secondary mb-3 mb-lg-0" data-aos="fade-down" data-aos-delay="700">
+              <span>Explore the world!</span>
+              <span class="icon icon-bag"></span>
+            </div>
+            <h1 class="headline-large text-black mb-md mb-lg-0" data-aos="fade-right" data-aos-delay="500"
+              data-aos-duration="1200">
+              Travel <span class="text-secondary">top destination</span> of&nbsp;the
+              world</h1>
+            <p class="col-sm-8 col-lg-12 mb-md mb-lg-0" data-aos="fade-right" data-aos-delay="600"
+              data-aos-duration="1200" data-aos-offset="100">We always
+              make our customer happy by providing as&nbsp;many choices as possible</p>
+            <div class="first-screen-ctas">
+              <a class="btn btn-primary" href="#!" data-aos="fade-up" data-aos-offset="50" data-aos-delay="500">Get
+                Started</a>
+              <a class="btn btn-outline" href="#!" data-aos="fade-up" data-aos-offset="50" data-aos-delay="600">Watch
+                demo</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7 col-xxl-auto order-first order-lg-last">
+            <div class="first-screen-images row gx-3 gx-lg-4" data-aos="zoom-in">
+              <div class="col-6 vstack position-relative ps-0">
+                <img src="./img/first-screen/img-1.jpg" alt="img 1" data-aos="fade-down-right" data-aos-delay="300">
+                <img src="./img/first-screen/img-2.jpg" alt="img 2" data-aos="fade-up-right" data-aos-delay="300">
+                <div class="badge text-bg-secondary rounded-circle p-2 p-sm-3">
+                  <span class="icon icon-send icon-md"></span>
+                </div>
+              </div>
+              <div class="col-6 vstack justify-content-center position-relative pe-0">
+                <img src="./img/first-screen/img-3.jpg" alt="img 3" data-aos="fade-up-left" data-aos-delay="300">
+                <div class="badge bg-info text-white rounded-circle p-2 p-sm-3">
+                  <span class="icon icon-add-user icon-md"></span>
+                </div>
+                <div class="badge gap-1 gap-sm-2">
+                  <span class="icon icon-location text-warning"></span>
+                  <span>Top Places</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion FIRST SCREEN -->
+
+    <!-- #region BRANDS -->
+    <section class="brands section" data-aos="fade-up">
+      <div class="container position-relative">
+        <div
+          class="row row-cols-3 row-cols-lg-5 justify-content-center text-center row-gap-md col-sm-9 col-lg-12 mx-auto">
+          <div class="col">
+            <img class="img-fluid" src="./img/brands/brand-1.svg" alt="tripadvisor logo">
+          </div>
+          <div class="col">
+            <img class="img-fluid" src="./img/brands/brand-2.svg" alt="expedia logo">
+          </div>
+          <div class="col">
+            <img class="img-fluid" src="./img/brands/brand-3.svg" alt="booking.com logo">
+          </div>
+          <div class="col">
+            <img class="img-fluid" src="./img/brands/brand-4.svg" alt="airbnb logo">
+          </div>
+          <div class="col">
+            <img class="img-fluid" src="./img/brands/brand-5.svg" alt="orbitz logo">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion BRANDS -->
+
+    <!-- #region SERVICES -->
+    <section class="services section" data-aos="fade-right">
+      <div class="services-container hstack flex-wrap">
+        <div class="services-left text-center text-lg-start">
+          <h6 class="subhead text-secondary mb-3">Services</h6>
+          <h3 class="headline-small">Our top value categories for you</h3>
+        </div>
+        <div class="services-right vstack flex-sm-row text-center row-gap-md column-gap-3" data-aos="fade-right"
+          data-aos-delay="400">
+          <div class="card flex-lg-shrink-0 mx-auto mx-md-0">
+            <div class="card-body align-items-center p-0 row-gap-0">
+              <img src="./img/services/destination.png" alt="destination" width="64" height="64">
+              <h5 class="title-medium">Best Tour Guide</h5>
+              <p>What looked like a small patch of purple grass, above five feet.</p>
+            </div>
+          </div>
+          <div class="card flex-lg-shrink-0 mx-auto mx-md-0">
+            <div class="card-body align-items-center p-0 row-gap-0">
+              <img src="./img/services/booking.png" alt="booking" width="64" height="64">
+              <h5 class="title-medium">Easy Booking</h5>
+              <p>Square, was moving across the sand in their direction.</p>
+            </div>
+          </div>
+          <div class="card flex-lg-shrink-0 mx-auto mx-md-0">
+            <div class="card-body align-items-center p-0 row-gap-0">
+              <img src="./img/services/cloudy.png" alt="cloudy" width="64" height="64">
+              <h5 class="title-medium">Weather Forecast</h5>
+              <p>What looked like a small patch of purple grass, above five feet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion SERVICES -->
+
+    <!-- #region EXPLORE -->
+    <section class="explore section">
+      <div class="container">
+        <div class="row mb-lg px-5" data-aos="fade-up">
+          <div class="col-lg-7 text-center text-lg-start mb-lg">
+            <h6 class="subhead text-secondary mb-3">Top Destination</h6>
+            <h3 class="headline-small">Explore top destination</h3>
+          </div>
+          <div
+            class="col-lg-5 text-center hstack justify-content-between justify-content-md-center justify-content-lg-end">
+            <button class="carousel-control-prev border rounded-circle me-3" type="button"
+              data-bs-target="#carouselExploreIndicators" data-bs-slide="prev">
+              <span class="icon icon-arrow-left" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next border rounded-circle ms-3" type="button"
+              data-bs-target="#carouselExploreIndicators" data-bs-slide="next">
+              <span class="icon icon-arrow-left" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="carousel slide" id="carouselExploreIndicators">
+            <div class="carousel-inner px-3 px-lg-5">
+              <div class="carousel-item active">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+                  <div class="col">
+                    <div class="card h-100" data-aos="fade-up" data-aos-delay="200">
+                      <img class="card-img-top" src="./img/explore/img-1.jpg" alt="img 1">
+                      <div class="card-body justify-content-between">
+                        <div class="row">
+                          <div class="col-xl-4 order-xl-last">
+                            <p class="title-small text-secondary mb-2">$150.99</p>
+                          </div>
+                          <div class="col-xl-8">
+                            <h5 class="title-small mb-3">Paradise Beach, Bantayan Island</h5>
+                            <p>Rome, Italy</p>
+                          </div>
+                        </div>
+                        <p class="hstack gap-2 title-small text-info">4.8<span class="icon icon-star"></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100" data-aos="fade-up" data-aos-delay="400">
+                      <img class="card-img-top" src="./img/explore/img-2.jpg" alt="img 2">
+                      <div class="card-body justify-content-between">
+                        <div class="row">
+                          <div class="col-xl-4 order-xl-last">
+                            <p class="title-small text-secondary mb-2">$20.99</p>
+                          </div>
+                          <div class="col-xl-8">
+                            <h5 class="title-small mb-3">Ocean with full of Colors</h5>
+                            <p>Maldives</p>
+                          </div>
+                        </div>
+                        <p class="hstack gap-2 title-small text-info">4.5<span class="icon icon-star"></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100" data-aos="fade-up" data-aos-delay="600">
+                      <img class="card-img-top" src="./img/explore/img-3.jpg" alt="img 3">
+                      <div class="card-body justify-content-between">
+                        <div class="row">
+                          <div class="col-xl-4 order-xl-last">
+                            <p class="title-small text-secondary mb-2">$150.99</p>
+                          </div>
+                          <div class="col-xl-8">
+                            <h5 class="title-small mb-3">Mountain View, Above the cloud</h5>
+                            <p>United Arab Emeries </p>
+                          </div>
+                        </div>
+                        <p class="hstack gap-2 title-small text-info">5.0<span class="icon icon-star"></span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="./img/explore/img-1.jpg" alt="img 1">
+                      <div class="card-body justify-content-between">
+                        <div class="row">
+                          <div class="col-xl-4 order-xl-last">
+                            <p class="title-small text-secondary mb-2">$150.99</p>
+                          </div>
+                          <div class="col-xl-8">
+                            <h5 class="title-small mb-3">Paradise Beach, Bantayan Island</h5>
+                            <p>Rome, Italy</p>
+                          </div>
+                        </div>
+                        <p class="hstack gap-2 title-small text-info">4.8<span class="icon icon-star"></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="./img/explore/img-2.jpg" alt="img 2">
+                      <div class="card-body justify-content-between">
+                        <div class="row">
+                          <div class="col-xl-4 order-xl-last">
+                            <p class="title-small text-secondary mb-2">$20.99</p>
+                          </div>
+                          <div class="col-xl-8">
+                            <h5 class="title-small mb-3">Ocean with full of Colors</h5>
+                            <p>Maldives</p>
+                          </div>
+                        </div>
+                        <p class="hstack gap-2 title-small text-info">4.5<span class="icon icon-star"></span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion EXPLORE -->
+
+    <!-- #region STATISTIC -->
+    <section class="statistic section">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7 mb-lg mb-lg-0">
+            <div class="statistic-image-wrap position-relative" data-aos="fade-right" data-aos-delay="100">
+              <img class="img-fluid" src="./img/decors/girl.png" alt="girl with travel bag" data-aos="fade-right"
+                data-aos-delay="200">
+              <div class="badge gap-1 gap-sm-2 position-absolute">
+                <span class="icon icon-discount text-info"></span>
+                <span>Discounted Price</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center text-lg-start">
+            <div class="row mb-lg" data-aos="fade-up">
+              <h6 class="subhead text-secondary mb-3">Travel Point</h6>
+              <h3 class="headline-small mb-md">We helping you find your dream location</h3>
+              <p class="body-small">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                piece
+                of classical Latin literature
+                from 45 BC.</p>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4 text-center position-relative">
+              <div class="col">
+                <div class="card h-100" data-aos="fade-down-right" data-aos-delay="100">
+                  <div class="card-body row-gap-3">
+                    <p class="title-large text-info">500+</p>
+                    <p class="text-dark">Holiday Package</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100" data-aos="fade-down-left" data-aos-delay="100">
+                  <div class="card-body row-gap-3">
+                    <p class="title-large text-info">100</p>
+                    <p class="text-dark">Luxury Hotel</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100" data-aos="fade-up-right" data-aos-delay="200">
+                  <div class="card-body row-gap-3">
+                    <p class="title-large text-info">7</p>
+                    <p class="text-dark">Premium Airlines</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100" data-aos="fade-up-left" data-aos-delay="200">
+                  <div class="card-body row-gap-3">
+                    <p class="title-large text-info">2k+</p>
+                    <p class="text-dark">Happy Customer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="badge bg-warning text-white rounded-circle d-none d-lg-inline-flex position-absolute"
+                data-aos="zoom-in" data-aos-delay="500">
+                <span class="icon icon-ticket-star icon-lg"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion STATISTIC -->
+
+    <!-- #region FEATURES -->
+    <section class="features section">
+      <div class="container">
+        <div class="row align-items-center gx-5">
+          <div class="col-lg-6 mx-auto vstack">
+            <div class="features-collage" data-aos="fade-down-left" data-aos-offset="400">
+              <div class="collage-img-1 col-10" style="background-image: url(./img/features/img-1.jpg);"></div>
+              <div class="collage-img-2 col-8 offset-4" style="background-image: url(./img/features/img-2.jpg);"
+                data-aos="fade-down-left" data-aos-delay="100"></div>
+              <div class="badge">
+                <span class="icon icon-map text-info"></span>
+                <span>Paradise on Earth</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="row">
+              <div class="col-12 mb-lg text-center text-lg-start" data-aos="fade-right">
+                <h6 class="subhead text-secondary mb-3">Key features</h6>
+                <h3 class="headline-small mb-md">We offer best services</h3>
+                <p class="body-small">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                  a piece of
+                  classical Latin literature
+                  from 45 BC.</p>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body" data-aos="fade-right" data-aos-delay="200">
+                    <div class="row align-items-center g-0">
+                      <div class="col-auto mb-md mb-sm-0">
+                        <div class="badge bg-info">
+                          <span class="icon icon-location icon-lg"></span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm">
+                        <h5 class="title-small mb-2">We offer best services</h5>
+                        <p>Lorem Ipsum is not simply random text</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body" data-aos="fade-right" data-aos-delay="400">
+                    <div class="row align-items-center g-0">
+                      <div class="col-auto mb-md mb-sm-0">
+                        <div class="badge bg-warning">
+                          <span class="icon icon-calendar icon-lg"></span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm">
+                        <h5 class="title-small mb-2">Schedule your trip</h5>
+                        <p>It has roots in a piece of classical</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body" data-aos="fade-right" data-aos-delay="600">
+                    <div class="row align-items-center g-0">
+                      <div class="col-auto mb-md mb-sm-0">
+                        <div class="badge bg-secondary">
+                          <span class="icon icon-ticket icon-lg"></span>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm">
+                        <h5 class="title-small mb-2">Get discounted coupons</h5>
+                        <p>Lorem Ipsum is not simply random text</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion FEATURES -->
+
+    <!-- #region TESTIMONIALS -->
+    <section class="testimonials section mb-md-4">
+      <div class="container position-relative">
+        <div class="row row-cols-1 justify-content-center position-relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-8 text-center mb-md">
+            <h6 class="subhead text-secondary mb-3">Testimonials</h6>
+            <h3 class="headline-small mb-lg">Trust our clients</h3>
+          </div>
+          <div class="col-md-8">
+            <div class="carousel slide" id="testimonials-carousel" data-bs-ride="true" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="carousel-inner text-center">
+                <div class="carousel-item">
+                  <figure class="testimonial-item mb-0">
+                    <img src="./img/testimonials/client-2.jpg" alt="Jane Doe">
+                    <figcaption>
+                      <h5 class="title-medium text-info mb-md">Jane Doe<span
+                          class="title-small text-dark text-opacity-75">
+                          / Travel
+                          Enthusiast</span></h5>
+                      <p class="hstack justify-content-center gap-3">
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning text-opacity-25"></span>
+                      </p>
+                      <p class="body-large">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of
+                        classical Latin
+                        literature
+                        from 45 BC.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="carousel-item active">
+                  <figure class="testimonial-item mb-0">
+                    <img src="./img/testimonials/client-1.jpg" alt="Mark Smith">
+                    <figcaption>
+                      <h5 class="title-medium text-info mb-md">Mark Smith<span
+                          class="title-small text-dark text-opacity-75">
+                          / Travel Enthusiast</span></h5>
+                      <p class="hstack justify-content-center gap-3">
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                      </p>
+                      <p class="body-large">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of
+                        classical Latin literature
+                        from 45 BC.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="carousel-item">
+                  <figure class="testimonial-item mb-0">
+                    <img src="./img/testimonials/client-3.jpg" alt="Robert Jones">
+                    <figcaption>
+                      <h5 class="title-medium text-info mb-md">Robert Jones<span
+                          class="title-small text-dark text-opacity-75">
+                          / Travel Enthusiast</span></h5>
+                      <p class="hstack justify-content-center gap-3">
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning"></span>
+                        <span class="icon icon-star icon-md text-warning text-opacity-25"></span>
+                      </p>
+                      <p class="body-large">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of
+                        classical Latin literature
+                        from 45 BC.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="carousel-indicators position-relative mx-0 mb-lg mb-md-0">
+                <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="0"
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="1" class="active"
+                  aria-current="true" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls col-12 hstack justify-content-between" data-aos="fade-in" data-aos-delay="200">
+            <button class="carousel-control-prev border rounded-circle" type="button"
+              data-bs-target="#testimonials-carousel" data-bs-slide="prev">
+              <span class="icon icon-arrow-left" aria-hidden="true"></span> <span
+                class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next border rounded-circle" type="button"
+              data-bs-target="#testimonials-carousel" data-bs-slide="next">
+              <span class="icon icon-arrow-left" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion TESTIMONIALS -->
+
+    <!-- #region SUBSCRIPTION -->
+    <section class="subscription section" data-aos="zoom-out-right" data-aos-delay="200">
+      <div class="container position-relative">
+        <div class="row mb-lg">
+          <div class="col-12 col-md-9 mx-auto text-center">
+            <h6 class="subhead text-secondary mb-md">subscribe to our newsletter</h6>
+            <h2 class="headline-medium">Prepare yourself &amp; let’s explore the beauty of the world</h2>
+          </div>
+        </div>
+        <form class="row gx-5 align-items-center ">
+          <div class="col mb-md mb-lg-0">
+            <label class="visually-hidden" for="emailInput">Your Email</label>
+            <div class="subscription-input-wrap hstack rounded gap-3">
+              <span class="icon icon-message text-dark text-opacity-75"></span>
+              <input class="form-control title-medium bg-transparent border-0 p-0 rounded-0" type="email"
+                id="emailInput" placeholder="Your Email">
+            </div>
+          </div>
+          <div class="col-lg-auto">
+            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- #endregion SUBSCRIPTION -->
+  </main>
+  <!-- #endregion MAIN -->
+
+  <!-- #region FOOTER -->
+  <footer class="footer section" data-aos="fade-up">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-lg-5 col-xl mb-lg mb-lg-0 px-3 px-lg-0">
+          <a class="logo mb-md" href="./">
+            <img src="./img/logo-icon.svg" alt="Travlog logo icon" width="40" height="40">
+            <span>Travlog</span>
+          </a>
+          <p class="body-large mb-lg">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+            in a piece of classical Latin literature
+            from 45 BC.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="me-3">
+              <a class="btn btn-primary p-2" href="#!" target="_blank">
+                <span class="icon icon-facebook"></span>
+              </a>
+            </li>
+            <li class="mx-3">
+              <a class="btn btn-primary p-2" href="#!" target="_blank">
+                <span class="icon icon-twitter"></span>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="btn btn-primary p-2" href="#!" target="_blank">
+                <span class="icon icon-instagram"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-7 col-xl">
+          <div class="accordion row g-0" id="footerAccordion">
+            <div class="accordion-item col-md mb-md mb-lg-0">
+              <h6 class="accordion-header">
+                <button class="accordion-button title-small collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Company
+                </button>
+              </h6>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+                <div class="accordion-body">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">About</a></li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">Career</a></li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">Mobile</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item col-md mb-md mb-lg-0">
+              <h6 class="accordion-header">
+                <button class="accordion-button title-small collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Contact Us
+                </button>
+              </h6>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+                <div class="accordion-body">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">Why Travlog?</a></li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">Partner with us</a></li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">FAQ’s</a></li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">Blog</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item col-md mb-md mb-lg-0">
+              <h6 class="accordion-header">
+                <button class="accordion-button title-small collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Meet Us
+                </button>
+              </h6>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#footerAccordion">
+                <div class="accordion-body">
+                  <ul class="nav flex-column">
+                    <li class="nav-item"><a href="tel:+00 92 1234 56789" class="nav-link body-medium">+00 92 1234
+                        56789</a>
+                    </li>
+                    <li class="nav-item"><a href="mailto:info@travlog.com"
+                        class="nav-link body-medium">info@travlog.com</a>
+                    </li>
+                    <li class="nav-item"><a href="#!" class="nav-link body-medium">205. R Street, New
+                        York<br>BD23200</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- #endregion FOOTER -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 150,
+    });
+  </script>
+</body>
+
+</html>

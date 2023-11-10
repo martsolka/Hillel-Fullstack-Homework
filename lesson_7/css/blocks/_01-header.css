@@ -1,0 +1,32 @@
+.header {
+  padding-block: var(--header-py);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: -1;
+}
+
+.header .nav {
+  --bs-nav-link-padding-y: 0;
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-color: rgba(var(--clr-darken-rgb), 0.5);
+  --bs-nav-link-hover-color: var(--clr-dark);
+  gap: 34px 64px;
+}
+
+.header .nav-link.active {
+  color: var(--clr-dark);
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .header .nav :where(.nav-link, .btn) {
+    font-size: var(--fs-body-lg);
+  }
+}

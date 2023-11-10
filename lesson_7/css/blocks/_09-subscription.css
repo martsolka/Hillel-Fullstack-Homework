@@ -1,0 +1,55 @@
+.subscription {
+  --bs-border-radius: 16px;
+  --btn-py: 32px;
+  --btn-px: 64px;
+  --radius-lg: 16px;
+  --fs-label-md: 23px;
+  --fs-icon: 32px;
+  --input-wrap-px: 32px;
+  --input-wrap-py: 32px;
+  --bs-body-color: rgba(var(--clr-darken-rgb), 0.75);
+}
+
+.subscription .container {
+  background-color: rgba(var(--bs-warning-rgb), 0.08);
+  padding-inline: var(--sp-lg);
+  padding-block: var(--sp-xxl);
+}
+
+.subscription-input-wrap {
+  padding: var(--input-wrap-py) var(--input-wrap-px);
+  background-color: var(--bs-body-bg);
+  transition: 0.3s ease;
+}
+
+.subscription-input-wrap :is(.form-control:is(:focus, :focus-visible)) {
+  box-shadow: none;
+  outline: none;
+}
+
+.subscription-input-wrap:has(.form-control:is(:focus, :focus-visible)) {
+  box-shadow: 0 0 0 4px rgba(var(--clr-primary-rgb), .25);
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 449.98px) {
+  .subscription {
+    --input-wrap-py: 24px;
+    --fs-label-md: 16px;
+    --fs-title-md: 16px;
+    --fs-icon: 24px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+  .subscription .container::after {
+    content: "";
+    position: absolute;
+    width: 184px;
+    height: 176px;
+    background: url(../../img/decors/bg-decor-5.svg) center / contain no-repeat;
+    top: -46px;
+    left: -30px;
+  }
+}

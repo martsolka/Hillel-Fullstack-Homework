@@ -1,0 +1,14 @@
+.statistic-image-wrap {
+  background: url(../../img/decors/bg-decor-7.svg) left 82% / contain no-repeat;
+}
+
+.statistic-image-wrap .badge {
+  right: 5%;
+  top: 25%;
+}
+
+.statistic .badge.rounded-circle {
+  padding: 32px;
+  right: -10%;
+  top: -15%;
+}

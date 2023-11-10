@@ -1,0 +1,149 @@
+/* BASE & BOOTSTRAP OVERRIDES: */
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 16px;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--clr-darken);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.section {
+  padding-block: var(--sp-lg);
+}
+
+.mb-md {
+  margin-bottom: var(--sp-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--sp-lg);
+}
+
+.row-gap-md {
+  row-gap: var(--sp-md);
+}
+
+.btn {
+  --bs-btn-padding-x: var(--btn-px);
+  --bs-btn-padding-y: var(--btn-py);
+  --bs-btn-font-size: var(--fs-label-md);
+  --bs-btn-font-weight: var(--fw-label-md);
+  --bs-btn-line-height: var(--lh-label-md);
+  --bs-btn-color: var(--clr-dark);
+  --bs-btn-border-width: 0;
+  --bs-btn-border-radius: var(--radius-lg);
+  --bs-btn-hover-color: var(--clr-primary);
+  --bs-btn-focus-shadow-rgb: var(--clr-primary-rgb);
+}
+
+.btn-primary {
+  --bs-btn-color: var(--clr-light);
+  --bs-btn-bg: var(--clr-primary);
+  --bs-btn-border-color: var(--clr-primary);
+  --bs-btn-hover-color: var(--clr-light);
+  --bs-btn-hover-bg: var(--clr-primary-light);
+  --bs-btn-active-color: var(--clr-light);
+  --bs-btn-active-bg: var(--clr-primary-dark);
+  --bs-btn-disabled-color: var(--clr-light);
+  --bs-btn-disabled-bg: var(--clr-primary);
+  --bs-btn-disabled-border-color: var(--clr-primary);
+}
+
+.btn-outline {
+  --bs-btn-hover-bg: var(--clr-light);
+  box-shadow: 0 0 0 1px var(--border-clr);
+}
+
+.badge {
+  --bs-badge-padding-x: 32px;
+  --bs-badge-padding-y: 16px;
+  --bs-badge-font-size: var(--fs-label-md);
+  --bs-badge-color: var(--clr-darken);
+  --bs-badge-border-radius: var(--radius-md);
+  background-color: var(--bs-body-bg);
+  max-width: fit-content;
+}
+
+.badge,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.badge:not(.rounded-circle) {
+  box-shadow: var(--box-shad-badge);
+}
+
+.badge.rounded-circle {
+  box-shadow: var(--box-shad-badge-circle);
+}
+
+.card {
+  --bs-card-border-radius: var(--radius-md);
+  --bs-card-inner-border-radius: var(--radius-md);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-md);
+  row-gap: var(--sp-md);
+  text-wrap: balance;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  all: unset;
+  width: var(--carousel-control-w);
+  height: var(--carousel-control-w);
+  line-height: 1;
+  text-align: center;
+  color: var(--clr-darken);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-control-prev {
+  transform: rotate(-180deg);
+}
+
+:is(.carousel-control-prev, .carousel-control-next):is(:hover, :focus) {
+  background-color: var(--clr-primary);
+  color: #fff;
+  filter: var(--drop-shad);
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .badge:not(.rounded-circle, .text-secondary) {
+    padding-inline: 16px;
+    font-size: 12px;
+  }
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 449.98px) {
+  .badge:not(.rounded-circle, .text-secondary) {
+    padding-block: 8px;
+    font-size: 8px;
+  }
+}
