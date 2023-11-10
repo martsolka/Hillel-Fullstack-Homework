@@ -3,13 +3,13 @@
 @import "general/typography.css";
 @import "general/base.css";
 
-@import "blocks/_01-header.css";
-@import "blocks/_02-first-screen.css";
-@import "blocks/_03-brands.css";
-@import "blocks/_04-services.css";
-@import "blocks/_05-explore.css";
-@import "blocks/_06-statistic.css";
-@import "blocks/_07-features.css";
-@import "blocks/_08-testimonials.css";
-@import "blocks/_09-subscription.css";
-@import "blocks/_10-footer.css";
+@import "blocks/b01-header.css";
+@import "blocks/b02-first-screen.css";
+@import "blocks/b03-brands.css";
+@import "blocks/b04-services.css";
+@import "blocks/b05-explore.css";
+@import "blocks/b06-statistic.css";
+@import "blocks/b07-features.css";
+@import "blocks/b08-testimonials.css";
+@import "blocks/b09-subscription.css";
+@import "blocks/b10-footer.css";
