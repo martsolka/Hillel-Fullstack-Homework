@@ -17,7 +17,7 @@ function sumArrayLoop(arr) {
   }
   return sum;
 }
-// - спосіб 2 (за допомогою методу foreach()):
+// - спосіб 2 (за допомогою методу forEach()):
 function sumArrayForeach(arr) {
   let sum = 0;
   arr.forEach(num => sum += num);
@@ -39,8 +39,8 @@ printResult("ЗАВДАННЯ 1 (за допомогою рекурсії):", su
 
 //#region ******* ЗАВДАННЯ 2 *******
 /**
- * Створіть об'єкт "користувач" з полями "ім'я", "вік" та "статус". 
- * Напишіть функцію, яка приймає цей об'єкт і повертає рядок у форматі "Ім'я: [ім'я], Вік: [вік], Статус: [статус]"
+ * Створіть об"єкт "користувач" з полями "ім"я", "вік" та "статус". 
+ * Напишіть функцію, яка приймає цей об"єкт і повертає рядок у форматі "Ім"я: [ім"я], Вік: [вік], Статус: [статус]"
  */
 
 const user = {
@@ -51,7 +51,7 @@ const user = {
 
 function getUserInfo(user) {
   const { name, age, status } = user;
-  return `Ім'я: ${name}, Вік: ${age}, Статус: ${status}`;
+  return `Ім"я: ${name}, Вік: ${age}, Статус: ${status}`;
 }
 
 printResult("ЗАВДАННЯ 2:", getUserInfo(user), "green");
@@ -84,8 +84,8 @@ printResult("ЗАВДАННЯ 3 (за допомогою методу split()):"
 
 //#region ******* ЗАВДАННЯ 4 *******
 /**
- * Створіть об'єкт "автомобіль" з полями "марка", "модель" та "рік випуску". 
- * Напишіть функцію, яка приймає цей об'єкт і виводить інформацію про автомобіль у консоль.
+ * Створіть об"єкт "автомобіль" з полями "марка", "модель" та "рік випуску". 
+ * Напишіть функцію, яка приймає цей об"єкт і виводить інформацію про автомобіль у консоль.
  */
 
 const car = {
@@ -135,4 +135,116 @@ function guessNumber(num, i) {
 
 const limit = 100;
 guessNumber(randNumber(limit), 1);
+//#endregion
+
+//#region ******* ЗАВДАННЯ 6 *******
+/**
+ * Створіть функцію-генератор випадкових паролів заданої довжини. 
+ * Пароль має містити як літери, і цифри. Довжина пароля повинна передаватись у вигляді аргумента.
+ */
+
+function generatePassword(length) {
+  const chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+    "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+    "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+    "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+    "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+  ];
+
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars[randNumber(chars.length)];
+  }
+  return password;
+}
+
+printResult("ЗАВДАННЯ 6 (пароль 1):", generatePassword(7), "purple");
+printResult("ЗАВДАННЯ 6 (пароль 2):", generatePassword(14), "purple");
+//#endregion
+
+//#region ******* ЗАВДАННЯ 7 *******
+/**
+ * Напишіть функцію, яка приймає масив чисел і повертає новий масив,
+ * який містить лише унікальні значення (без повторень).
+ */
+
+// - спосіб 1 (за допомогою методу forEach()):
+function uniqueNumbersForeach(numbers) {
+  const uniqueNumbersArray = [];
+
+  numbers.forEach(number => {
+    if (!uniqueNumbersArray.includes(number)) {
+      uniqueNumbersArray.push(number);
+    }
+  });
+
+  return uniqueNumbersArray;
+}
+
+// - спосіб 2 (за допомогою методу Set() і Spread оператора):
+function uniqueNumbersSet(numbers) {
+  const numbersSet = new Set(numbers);
+  return [...numbersSet];
+}
+
+const nums1 = [1, 2, 1, 2, 3, -1, 1];
+const nums2 = [100, 6, -100, 3, 2, 6, -100, 2];
+
+printResult(`ЗАВДАННЯ 7 (за допомогою методу foreach()):\n вхідний масив: ${nums1}`, uniqueNumbersForeach(nums1));
+printResult(`ЗАВДАННЯ 7 (за допомогою методу Set() і Spread оператора:\n вхідний масив: ${nums2}`, uniqueNumbersSet(nums2));
+//#endregion
+
+//#region ******* ЗАВДАННЯ 8 *******
+/**
+ * Напишіть функцію, яка приймає рядок і визначає, чи вона є паліндромом (читається однаково в обох напрямках), 
+ * ігноруючи пробіли, розділові знаки та регістр.
+ */
+
+const normalizeString = (str) => str.replace(/[ ,.;:!?]/g, "").toLowerCase();
+
+function isPalindrome(str) {
+  str = normalizeString(str);
+  return str === str.split("").reverse().join("");
+}
+
+const strP = "Eve, mad Adam, Eve!";
+printResult(`ЗАВДАННЯ 8 ('${strP}' є паліндромом?):`, isPalindrome(strP), "green");
+//#endregion
+
+//#region ******* ЗАВДАННЯ 9 *******
+/**
+ * Напишіть функцію для перевірки, чи є рядок анаграмою іншого рядка (складається з тих самих символів в іншому порядку).
+ */
+
+function isAnagram(str1, str2) {
+  str1 = normalizeString(str1);
+  str2 = normalizeString(str2);
+
+  if (str1.length !== str2.length) { return false; }
+
+  const str1Obj = {};
+  const str2Obj = {};
+
+  str1.split("").forEach(char => str1Obj[char] = str1Obj[char] ? str1Obj[char] + 1 : 1);
+  str2.split("").forEach(char => str2Obj[char] = str2Obj[char] ? str2Obj[char] + 1 : 1);
+
+  for (const key in str1Obj) {
+    if (str1Obj[key] !== str2Obj[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+const text1 = "hello, world";
+const text2 = "holler wold";
+const text3 = "programm";
+const text4 = "gram prom";
+const text5 = "gram";
+const text6 = "army";
+
+printResult(`ЗАВДАННЯ 9 ('${text1}' є анаграмою '${text2}'?):`, isAnagram(text1, text2), "orange");
+printResult(`ЗАВДАННЯ 9 ('${text3}' є анаграмою '${text4}'?):`, isAnagram(text3, text4), "orange");
+printResult(`ЗАВДАННЯ 9 ('${text5}' є анаграмою '${text6}'?):`, isAnagram(text5, text6), "orange");
 //#endregion
