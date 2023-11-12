@@ -36,7 +36,7 @@ For more information, additional resources, courses and support, you can visit t
 ![Homework 9 Progress](https://img.shields.io/badge/Homework%209-✅-success)
 [![Homework 10 Progress](https://img.shields.io/badge/Homework%2010-✅-success)](./lesson_10)
 [![Homework 11 Progress](https://img.shields.io/badge/Homework%2011-✅-success)](./lesson_11)
-[![Homework 12 Progress](https://img.shields.io/badge/Homework%2012-⌛️-yellow)](./lesson_12)
+[![Homework 12 Progress](https://img.shields.io/badge/Homework%2012-✅-success)](./lesson_12)
 [![Homework 13 Progress](https://img.shields.io/badge/Homework%2013-⌛️-yellow)](./lesson_13)
 [![Homework 14 Progress](https://img.shields.io/badge/Homework%2014-❌-red)](./lesson_14)
 [![Homework 15 Progress](https://img.shields.io/badge/Homework%2015-❌-red)](./lesson_15)
