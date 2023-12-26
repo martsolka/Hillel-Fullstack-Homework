@@ -1,0 +1,42 @@
+[
+  {
+    "tabId": "trending-tab",
+    "tabIcon": "bi bi-fire",
+    "tabTitle": "Тренди",
+    "panelId": "trending",
+    "panelTitle": "Користувачі вибирають 🤩",
+    "panelDescription": "Перегляньте найновіші та найпопулярніші гіфки",
+    "isActive": true,
+    "fetchFunction": "fetchTrendingGifs"
+  },
+  {
+    "tabId": "random-tab",
+    "tabIcon": "bi bi-shuffle",
+    "tabTitle": "Рандом",
+    "panelId": "random",
+    "panelTitle": "Випадково відібрано 🎲",
+    "panelDescription": "Відкрийте для себе абсолютно несподівані та веселі гіфки",
+    "isActive": false,
+    "fetchFunction": "fetchRandomGifs"
+  },
+  {
+    "tabId": "favorites-tab",
+    "tabIcon": "bi bi-bookmark-heart-fill",
+    "tabTitle": "Вибране",
+    "panelId": "favorites",
+    "panelTitle": "Ваші збережені гіфки ❤️",
+    "panelDescription": "Перегляньте список вибраних гіфок",
+    "isActive": false,
+    "fetchFunction": "fetchFavoriteGifs"
+  },
+  {
+    "tabId": "search-tab",
+    "tabIcon": "bi bi-search",
+    "tabTitle": "Пошук",
+    "panelId": "search",
+    "panelTitle": "Результати пошуку 🔍",
+    "panelDescription": "Перегляньте гіфки на основі вашого пошукового запиту",
+    "isActive": false,
+    "fetchFunction": "fetchSearchGifs"
+  }
+]

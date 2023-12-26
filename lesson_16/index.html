@@ -1,0 +1,133 @@
+<!DOCTYPE html class="h-100">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>ДЗ 16. Promises and Fetch | GIFs Gallery</title>
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+  <div class="container-lg d-flex flex-column position-relative shadow-lg rounded-5 m-4 mx-lg-auto overflow-hidden">
+    <!-- Header -->
+    <header class="row text-center bg-gradient lh-1 position-relative z-2 pb-5 pb-lg-3">
+      <p class="fw-medium shadow-sm py-1 mb-4 bg-glass small">
+        <i class="bi bi-images me-2"></i>Ваша найкраща галерея GIF-файлів
+      </p>
+      <h1 class="display-5 text-uppercase fw-semibold">Ласкаво просимо в GIFhub!</h1>
+      <p class="opacity-75 mb-5 mb-sm-3 mb-lg-5 small">Знаходьте, зберігайте та діліться з друзями.</p>
+      <!-- Search box -->
+      <div
+        class="col-11 col-md-9 col-xl-8 bg-glass rounded-4 mx-auto position-absolute top-100 start-50 translate-middle z-3">
+        <div class="input-group input-group-sm py-2 rounded-4">
+          <span class="input-group-text bg-transparent border-0 fs-3 text-white"><i
+              class="bi bi-filetype-gif"></i></span>
+          <div class="col-8 flex-grow-1">
+            <!-- Search input -->
+            <div class="form-floating bg-gradient rounded-4 overflow-hidden">
+              <input class="form-control form-control-sm bg-transparent border-0 text-white" type="search"
+                id="search-input" placeholder="Type in keyword or phrase to search for GIFs" autocomplete="off">
+              <label for="search-input">Введіть ключове слово або фразу для пошуку...</label>
+            </div>
+          </div>
+          <div class="col-auto flex-grow-1 ms-2">
+            <!-- Select numbers -->
+            <div class="form-floating bg-gradient rounded-4 overflow-hidden">
+              <select class="form-select form-select-sm bg-transparent border-0 text-white ps-3" id="limit-select">
+                <option class="text-dark" value="5">5 гіфок</option>
+                <option class="text-dark" value="10" selected>10 гіфок</option>
+                <option class="text-dark" value="15">15 гіфок</option>
+                <option class="text-dark" value="20">20 гіфок</option>
+                <option class="text-dark" value="30">30 гіфок</option>
+              </select>
+              <label for="limit-select">Відображати</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="row flex-column flex-nowrap bg-glass h-100 overflow-auto py-5 mb-3 mb-sm-0">
+      <!-- GIFs Tabs Navigation -->
+      <section class="mt-5 mt-sm-4 mt-lg-0 mb-3">
+        <nav class="nav nav-pills flex-nowrap gap-2 nav-fill overflow-x-auto pb-2" id="gifs-tab">
+          <!-- GIFs tab buttons will be dynamically added by JS -->
+        </nav>
+      </section>
+      <!-- GIFs Tabs Content -->
+      <section class="tab-content flex-fill" id="gifs-tab-content">
+        <!-- GIFs will be dynamically added by JS -->
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="row row-cols-3 align-items-center bg-glass text-align-center py-2 position-absolute bottom-0 start-0 end-0 small">
+      <div class="col opacity-50">&copy; 2023 GIFhub</div>
+      <div class="col border-start border-end border-2 border-light border-opacity-25">
+        <span class="opacity-50 me-1">Powered by</span><a
+          class="link-light link-underline-opacity-0 link-underline-opacity-75-hover link-offset-2-hover opacity-100"
+          href="https://developers.giphy.com/" target="_blank"><b>GIPHY</b> Developers</a>
+      </div>
+      <div class="col">
+        <span class="opacity-50 me-1">Made by</span> <a
+          class="link-light link-underline-opacity-0 link-underline-opacity-75-hover link-offset-2-hover opacity-100"
+          href="https://github.com/martsolka" target="_blank">martsolka</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Share modal -->
+  <div class="modal modal-sm fade" id="share-modal" tabindex="-1" aria-labelledby="share-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-glass rounded-4 border-0">
+        <div class="modal-header">
+          <h6 class="modal-title" id="share-modal-label">Поділіться гіфкою із друзями:</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex flex-wrap gap-2 text-nowrap">
+            <button class="btn bg-gradient text-light border-0 shadow-sm rounded-3 col" type="button"
+              data-share="facebook"><i class="bi bi-facebook me-2"></i>Facebook</button>
+            <button class="btn bg-gradient text-light border-0 shadow-sm rounded-3 col" type="button"
+              data-share="twitter"><i class="bi bi-twitter-x me-2"></i>Twitter</button>
+            <button class="btn bg-gradient text-light border-0 shadow-sm rounded-3 col" type="button"
+              data-share="telegram"><i class="bi bi-telegram me-2"></i>Telegram</button>
+            <button class="btn bg-gradient text-light border-0 shadow-sm rounded-3 col" type="button"
+              data-share="whatsapp"><i class="bi bi-whatsapp me-2"></i>WhatsApp</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn bg-glass text-light rounded-3 w-100" data-copy="embed"><i
+              class="bi bi-code me-2"></i>Копіювати вбудований код</button>
+          <button class="btn bg-glass text-light rounded-3 w-100" data-copy="link"><i
+              class="bi bi-clipboard me-2"></i>Копіювати посилання</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/gif-tabs.js"></script>
+  <script src="./js/gif-cards.js"></script>
+  <script src="./js/gif-api.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
