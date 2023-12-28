@@ -1,6 +1,13 @@
 <script setup>
+import './assets/lesson19.css'
+
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  document.title = 'ДЗ 19. Вступ до Vue'
+});
 </script>
 
 <template>
