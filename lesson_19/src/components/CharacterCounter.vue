@@ -39,5 +39,8 @@ export default {
       this.$emit('changeCharacter', updatedCharacter);
     },
   },
+  created() {
+    this.count = this.character.count;
+  }
 }
 </script>
