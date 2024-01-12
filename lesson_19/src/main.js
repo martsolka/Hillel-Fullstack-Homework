@@ -9,8 +9,11 @@ import { createApp } from 'vue'
 // import Lesson21 from './Lesson21.vue'
 // createApp(Lesson21).mount('#app')
 //----------------------------------------
-import Lesson23 from './Lesson23.vue'
-createApp(Lesson23).mount('#app')
+import Lesson22 from './Lesson22.vue'
+createApp(Lesson22).mount('#app')
+//----------------------------------------
+// import Lesson23 from './Lesson23.vue'
+// createApp(Lesson23).mount('#app')
 // ----------------------------------------
 // import Lesson24 from './Lesson24.vue'
 // createApp(Lesson24).mount('#app')
