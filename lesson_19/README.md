@@ -14,6 +14,8 @@
 
 👉 [ДЗ 24. Підсумок базових концепцій VUE. Axios та підключення бібліотек.](#hw-24)
 
+👉 [ДЗ 32. MySQL: SELECT.](#hw-32)
+
 ---
 
 ## <a id="hw-19">ДЗ 19.</a> 👩‍💻 Вступ до Vue. Інніціалізація \ перший компонент.
@@ -314,3 +316,98 @@
 ### 💻 Демонстрація 💻
 
 <img src="./public/random-gif.gif" alt="Random Gif" width="80%">
+
+---
+
+## <a id="hw-32">ДЗ 32. <img alt="Alt text" src="https://img.shields.io/badge/MySQL-4479A1.svg?logo=MySQL&logoColor=white&style=flat" /> SELECT 🕵️‍♂️ </a>
+
+### 📝 Сформувати SQL запити на основі таблиці `users` 👥:
+
+```sql
+CREATE TABLE `home`.`users`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `status` ENUM('active', 'inactive', 'blocked') NOT NULL DEFAULT 'active',
+    `role` ENUM('admin', 'manager', 'player') NOT NULL DEFAULT 'user',
+    `rating` TINYINT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(`id`)
+) ENGINE = InnoDB;
+```
+
+- Оберіть всіх адмінів (юзери, які мають роль admin).
+  
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `role` = 'admin';
+  ```
+
+- Оберіть всіх юзерів, які мають емейл у домені "@gmail.com".
+
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `email` LIKE '%@gmail.com';
+  ```
+
+- Оберіть id та name юзерів, котрі мають не активний статус (blocked або inactive) та роль user.
+
+  **Відповідь:**
+
+  ```sql
+  SELECT `id`, `name` FROM `home`.`users` WHERE (`status` = 'blocked' OR `status` = 'inactive') AND `role` = 'user';
+  ```
+  ```sql
+  SELECT `id`, `name` FROM `home`.`users` WHERE `status` IN ('blocked', 'inactive') AND `role` = 'user';
+  ```
+
+- Оберіть юзерів з id 4, 34, 3426, 63479.
+
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `id` IN (4, 34, 3426, 63479);
+  ```
+
+- Оберіть юзерів, які створені пізніше "2024-01-01 00:00:00" (дату можна вказувати так само, як це прописано у завданні).
+
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `created_at` > '2024-01-01 00:00:00';
+  ```
+
+- Оберіть всіх юзерів, котрі зареєстровані у 2023-му році.
+
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `created_at` LIKE '2023%';
+  ```
+
+- Підрахуйте середній рейтинг гравців (rating поле визначе рейтинг користувача, а гравцями є всі, хто має роль player).
+
+  **Відповідь:**
+
+  ```sql
+  SELECT AVG(`rating`) FROM `home`.`users` WHERE `role` = 'player';
+  ```
+
+- Оберіть топ 10 кращих за рейтингом гравців (гравцями є всі, хто має роль player).
+
+  **Відповідь:**
+
+  ```sql
+  SELECT * FROM `home`.`users` WHERE `role` = 'player' ORDER BY `rating` DESC LIMIT 10;
+  ```
+
+- Знайдіть найбільний рейтинг серез всіх гравців (гравцями є всі, хто має роль player).
+
+  **Відповідь:**
+
+  ```sql
+  SELECT MAX(`rating`) FROM `home`.`users` WHERE `role` = 'player';
+  ```
