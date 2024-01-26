@@ -16,6 +16,8 @@
 
 👉 [ДЗ 32. MySQL: SELECT.](#hw-32)
 
+👉 [ДЗ 33. MySQL: INSERT \ UPDATE \ DELETE.](#hw-33)
+
 ---
 
 ## <a id="hw-19">ДЗ 19.</a> 👩‍💻 Вступ до Vue. Інніціалізація \ перший компонент.
@@ -411,3 +413,85 @@ CREATE TABLE `home`.`users`(
   ```sql
   SELECT MAX(`rating`) FROM `home`.`users` WHERE `role` = 'player';
   ```
+
+---
+
+## <a id="hw-33">ДЗ 33. <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1.svg?logo=MySQL&logoColor=white&style=flat" /> INSERT \ UPDATE \ DELETE</a>
+
+### 📝 Сформувати SQL запити на основі таблиці `users` 👥:
+
+```sql
+CREATE TABLE `home`.`users`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `status` ENUM('active', 'inactive', 'blocked') NOT NULL DEFAULT 'active',
+    `role` ENUM('admin', 'manager', 'player') NOT NULL DEFAULT 'player',
+    `rating` TINYINT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(`id`)
+) ENGINE = InnoDB;
+```
+
+
+- Напишіть запит на додавання 1 рядка у таблицю. Значення оберіть на свій розсуд.
+
+  **Відповідь:**
+
+  ```sql
+  INSERT INTO `home`.`users` (`name`, `email`, `status`, `role`, `rating`) VALUES ('Solomia', 'martsolka@gmail.com', 'active', 'player', 5);
+  ```
+
+- Напишіть запит на додавання одразу 5 рядків у таблицю. Значення оберіть на свій розсуд.
+
+  **Відповідь:**
+
+  ```sql
+  INSERT INTO `home`.`users` (`name`, `email`, `status`, `role`, `rating`) 
+  VALUES ('Sophia', 'sophia@gmail.com', 'inactive', 'manager'),
+    ('Vlad', 'vlad@mail.ru', 'inactive'),
+    ('Vitalii', 'vitalii@gmail.com', 'blocked',  NULL, 4),
+    ('Svitlana', 'svitlana@gmail.com', 'active', 'admin'),
+    ('Sergei', 'sergei@gmail.com', 'active', NULL, 5);
+  ```
+
+- Напишіть запит, який буде оновлювати значення статусу у користувача з id = 1 на значення "blocked".
+
+  **Відповідь:**
+
+  ```sql
+  UPDATE `home`.`users` SET `status` = 'blocked' WHERE `id` = 1;
+  ```
+
+- Напишіть запит, який буде оновлювати значення статусу у користувачів з емейлом домену @mail.ru на значення "blocked".
+
+  **Відповідь:**
+
+  ```sql
+  UPDATE `home`.`users` SET `status` = 'blocked' WHERE `email` LIKE '%@mail.ru';
+  ```
+
+- Напишіть запит, який видалить запис  з id = 1.
+
+  **Відповідь:**
+
+  ```sql
+  DELETE FROM `home`.`users` WHERE `id` = 1;
+  ```
+
+- Запит, який видалить всіх гравців (хто має роль player), котрі були зареєстровані (створені) раніше 2011 року.
+
+  **Відповідь:**
+
+  ```sql
+  DELETE FROM `home`.`users` WHERE `role` = 'player' AND `created_at` < '2011-01-01 00:00:00';
+  ```
+
+ - > Додатково: Напишіть запит, який оновить всі рейтинги на значення у 2 рази менше, ніж було (округлення по правилам математики)
+   >
+   > **Відповідь:**
+   >
+   > ```sql
+   > UPDATE `home`.`users` SET `rating` = ROUND(`rating` / 2, 0) WHERE `rating` IS NOT NULL;
+   > ```
