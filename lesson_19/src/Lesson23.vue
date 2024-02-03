@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import CharacterCounter from './components/CharacterCounter.vue';
+import CharacterCounter from './components/lesson23/CharacterCounter.vue';
 
 export default {
   components: { CharacterCounter },

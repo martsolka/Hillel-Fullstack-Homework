@@ -1,8 +1,8 @@
 <script setup>
-import './assets/lesson19.css'
+import './assets/lesson19/main.css'
 
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HelloWorld from './components/lesson19/HelloWorld.vue'
+import TheWelcome from './components/lesson19/TheWelcome.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
@@ -12,7 +12,7 @@ onMounted(() => {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="./assets/lesson19/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />

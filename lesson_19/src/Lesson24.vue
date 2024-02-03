@@ -8,8 +8,8 @@
 
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FullName from './components/FullName.vue';
-import RandomGif from './components/RandomGif.vue';
+import FullName from './components/lesson24/FullName.vue';
+import RandomGif from './components/lesson24/RandomGif.vue';
 
 export default {
   components: { FullName, RandomGif },
