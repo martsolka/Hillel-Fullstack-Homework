@@ -10,6 +10,8 @@
 
 👉 [ДЗ 35. MySQL: Many-to-many.](#hw-35)
 
+👉 [ДЗ 36. MySQL: Підсумок](#hw-36)
+
 ---
 
 ## <a id="hw-32">ДЗ 32. MySQL: SELECT </a>
@@ -266,3 +268,81 @@ Cпроектовано з використанням сервісу [https://ap
 ![online store database diagram](./online-store-db.drawio.svg)
 
 Cпроектовано з використанням сервісу [https://app.diagrams.net/](https://app.diagrams.net/)
+
+---
+
+## <a id="hw-36">ДЗ 36. MySQL: Підсумок</a>
+
+### 📝 Сформувати SQL запити на основі створенної структури таблиць:
+
+![online it school database](./online-it-school-db.png)
+
+- оберіть всіх користувачів з роллю 'admin' (id ролі невідомо)
+  ```sql
+  SELECT * FROM `users` AS u
+  LEFT JOIN `roles` AS r ON u.role_id = r.id
+  WHERE r.name = 'admin';
+  ```
+- оберіть всі посилання на соціальну мережу з іменем 'telegram' (id соціальнох мережі  невідомо) для всіх користувачиів з роллю 'teacher' (id ролі також невідомо) 
+  ```sql
+  SELECT us.url AS teachers_telegrams FROM `user_socials` AS us
+  LEFT JOIN `socials` AS s ON us.social_id = s.id
+  LEFT JOIN `users` AS u ON us.user_id = u.id
+  LEFT JOIN `roles` AS r ON u.role_id = r.id
+  WHERE s.name = 'telegram' AND r.name = 'teacher';
+  ```
+- підрахуйте середній бал кожної группи
+  ```sql
+  SELECT g.name AS group_name, AVG(sh.rating) AS avg_rating FROM `groups` AS g
+  LEFT JOIN `group_student` AS gs ON g.id = gs.group_id
+  LEFT JOIN `student_homework` AS sh ON gs.user_id = sh.student_id
+  GROUP BY group_name;
+  ```
+- підрахуйте середній бал кожного курсу
+  ```sql
+  SELECT c.name AS course_name, AVG(sh.rating) AS avg_rating FROM `groups` AS g
+  LEFT JOIN `group_student` AS gs ON g.id = gs.group_id
+  LEFT JOIN `student_homework` AS sh ON gs.user_id = sh.student_id
+  LEFT JOIN `courses` as c ON g.course_id = c.id
+  GROUP BY course_name;
+  ```
+
+- оберіть всі невиконані домашні роботи для студента з  id = 1
+  ```sql
+  SELECT * FROM `homeworks` AS h
+  LEFT JOIN `student_homework` AS sh ON h.id = sh.homework_id
+  WHERE sh.student_id = 1 AND sh.passed_at IS NULL;
+  ```
+
+- оберіть список групп, в котрих приймає участь студент з id = 1
+  ```sql
+  SELECT * FROM `groups` AS g
+  LEFT JOIN `group_student` AS gs ON g.id = gs.group_id
+  WHERE gs.user_id = 1;
+  ```
+
+- оберіть список групп в котрих юзер з id = 1 є викладачем
+  ```sql
+  SELECT * FROM `groups` AS g
+  LEFT JOIN `users` AS u ON g.teacher_id = u.id
+  LEFT JOIN `roles` AS r ON u.role_id = r.id
+  WHERE u.id = 1 AND r.name = 'teacher';
+  ```
+
+- оберіть cписок групп в котрих кількість учасників більше 5-ти
+  ```sql
+  SELECT * FROM `groups` AS g
+  LEFT JOIN `group_student` AS gs ON g.id = gs.group_id
+  GROUP BY g.id
+  HAVING COUNT(gs.user_id) > 5;
+  ```
+
+- оберіть список домашніх робiт группи з id=1, де ще немає жодної зданної роботи
+  ```sql
+  SELECT h.* FROM `homeworks` AS h
+  LEFT JOIN `student_homework` AS sh ON h.id = sh.homework_id
+  LEFT JOIN `group_student` AS gs ON sh.student_id = gs.user_id
+  WHERE gs.group_id = 1
+  ORDER BY h.id
+  HAVING sh.id IS NULL;
+  ```
