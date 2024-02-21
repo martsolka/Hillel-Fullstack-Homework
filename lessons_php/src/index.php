@@ -1,2 +1,3 @@
 <?php
-echo "Hello from index.php";
+header('Location: signup.php');
+exit;

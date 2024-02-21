@@ -1,0 +1,23 @@
+:root {
+  --bs-border-color-translucent: rgba(209, 213, 219, 0.3);
+  --bs-border-color: var(--bs-border-color-translucent);
+  --bs-border-radius: var(--bs-border-radius-xl);
+  --bs-body-bg: rgba(255, 255, 255, 0.75);
+  --bg-color-mesh-1: #def2ef;
+  --bg-color-mesh-2: #9bcdf8;
+  --bg-color-mesh-3: #3d8f85;
+}
+
+.mesh-gradient {
+  background-color: var(--bg-color-mesh-1);
+  background-image: radial-gradient(at 47% 33%,
+      var(--bg-color-mesh-2) 0,
+      transparent 59%),
+    radial-gradient(at 82% 65%, var(--bg-color-mesh-3) 0, transparent 55%);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card,
+.backdrop-filter {
+  backdrop-filter: blur(10px) saturate(180%);
+}
