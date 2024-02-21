@@ -8,6 +8,14 @@
   --bg-color-mesh-3: #3d8f85;
 }
 
+[data-bs-theme="dark"] {
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.125);
+  --bs-body-bg: rgba(17, 25, 40, 0.75);
+  --bg-color-mesh-1: #111927;
+  --bg-color-mesh-2: #3d8f85;
+  --bg-color-mesh-3: #111927;
+}
+
 .mesh-gradient {
   background-color: var(--bg-color-mesh-1);
   background-image: radial-gradient(at 47% 33%,

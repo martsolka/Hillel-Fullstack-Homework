@@ -1,4 +1,11 @@
 <?php
+session_start();
+require_once('functions.php');
+
+if (isset($_SESSION['is_auth'])) {
+  redirect('home-private.php');
+}
+
 $validationRules = [
   'name' => [
     [
@@ -84,11 +91,7 @@ $validationRules = [
 $result_alert = ['status' => null, 'message' => null];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  foreach ($validationRules as $field => $rules) {
-    $value = trim($_POST[$field] ?? '');
-    $errors[$field] = validateField($value, $rules);
-    $fields[$field] = $value;
-  }
+  validateForm($validationRules, $fields, $errors);
 
   if (empty(array_filter($errors))) {
     $result_alert = ['status' => 'success', 'message' => 'Form submitted successfully!🎉'];
@@ -98,43 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 }
 
-function resetFormFields(array $validationRules): array
-{
-  $fields = array_fill_keys(array_keys($validationRules), null);
-  $errors = array_fill_keys(array_keys($validationRules), null);
-  return [$fields, $errors];
-}
-
-function validateField(string $value, array $rules): ?string
-{
-  foreach ($rules as $rule) {
-    if ($rule['check']($value)) {
-      return $rule['error_msg'];
-    }
-  }
-  return null;
-}
-
-function displayError(string $field, array $errors): string
-{
-  return !empty($errors[$field]) ? '<div class="invalid-feedback">' . $errors[$field] . '</div>' : '';
-}
-
-function validationClass(string $field, array $errors): string
-{
-  return !empty($errors[$field]) ? 'is-invalid' : '';
-}
+$pageTitle = 'Registration Page';
+require_once('page-head.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link href="/css/style.css" rel="stylesheet">
-</head>
 
 <body class="d-flex flex-column vh-100 mesh-gradient overflow-hidden">
   <main class="flex-grow-1">
@@ -226,13 +195,16 @@ function validationClass(string $field, array $errors): string
             <div class="card-footer py-1 text-center">
               <span class="small text-muted">
                 Already a member?
-                <a href="#" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover fw-semibold">
+                <a href="signin.php" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover fw-semibold">
                   Sign In
                 </a>
               </span>
             </div>
           </div>
         </div>
+      </div>
+      <div class="position-absolute top-0 end-0 m-3 m-lg-5 z-3">
+        <?php require_once('theme-switch.php'); ?>
       </div>
     </div>
   </main>
