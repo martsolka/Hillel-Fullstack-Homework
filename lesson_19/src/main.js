@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 //----------------------------------------
 // import Lesson19 from './Lesson19.vue'
 // createApp(Lesson19).mount('#app')
@@ -17,3 +18,6 @@ import { createApp } from 'vue'
 // ----------------------------------------
 // import Lesson24 from './Lesson24.vue'
 // createApp(Lesson24).mount('#app')
+// ----------------------------------------
+import Lesson25 from './Lesson25.vue'
+createApp(Lesson25).use(createPinia()).mount('#app')
