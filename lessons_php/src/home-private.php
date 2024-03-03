@@ -2,15 +2,8 @@
 session_start();
 require_once('functions.php');
 
-if (!isset($_SESSION['is_auth'])) {
-  redirect('signin.php');
-}
-
-if (isset($_GET['signout'])) {
-  unset($_SESSION['is_auth']);
-  session_destroy();
-  redirect('signin.php');
-}
+checkAuth();
+handleSignout();
 
 $pageTitle = 'Home | Private Page';
 require_once('page-head.php');
@@ -28,6 +21,7 @@ require_once('page-head.php');
         <div class="m-auto text-body-secondary text-center">
           <p class="h1">Successfully Logged In!</p>
           <p class="lead">This is a private area. You can only see this if you are logged in.</p>
+          <a class="btn btn-success bg-gradient fw-medium fs-5 px-4 m-2" href="/online-shop/">🛍 Grocery Shop &rarr;</a>
         </div>
       </main>
       <footer class="card-footer hstack justify-content-between">

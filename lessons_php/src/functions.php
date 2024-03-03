@@ -40,3 +40,18 @@ function redirect(string $path = '/'): void
   header("Location: {$path}");
   exit();
 }
+
+function checkAuth()
+{
+  if (!isset($_SESSION['is_auth'])) {
+    redirect('/signin.php');
+  }
+}
+
+function handleSignout()
+{
+  if (isset($_GET['signout'])) {
+    unset($_SESSION['is_auth']);
+    redirect('/signin.php');
+  }
+}

@@ -1,0 +1,10 @@
+<?php 
+session_start();
+require_once('./../functions.php');
+require_once('./classes/Product.php');
+require_once('./classes/CartItem.php');
+require_once('./classes/Order.php');
+require_once('./classes/SessionManager.php');
+require_once('./classes/ProductsSessionManager.php');
+require_once('./classes/CartSessionManager.php');
+require_once('./classes/OrdersSessionManager.php');

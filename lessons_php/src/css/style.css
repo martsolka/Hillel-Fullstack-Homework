@@ -29,3 +29,13 @@
 .backdrop-filter {
   backdrop-filter: blur(10px) saturate(180%);
 }
+
+.table {
+  --bs-table-bg: transparent;
+}
+.accordion {
+  --bs-accordion-bg: rgba(var(--bs-body-bg-rgb), 0.25);
+  --bs-accordion-active-color: var(--bs-body-color);
+  --bs-accordion-active-bg: rgba(var(--bs-body-bg-rgb), 0.25);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem var(--bs-secondary-border-subtle);
+}
