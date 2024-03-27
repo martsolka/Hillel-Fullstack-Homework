@@ -1,0 +1,11 @@
+<?php
+require_once('classes/Node.php');
+require_once('classes/NodeAbstract.php');
+require_once('classes/NodeBlock.php');
+require_once('classes/NodeInline.php');
+require_once('classes/NodeInput.php');
+require_once('classes/NodeInputLabel.php');
+require_once('classes/NodeList.php');
+require_once('classes/NodeListBlock.php');
+require_once('classes/NodeListItem.php');
+require_once('classes/NodeTextArea.php');
