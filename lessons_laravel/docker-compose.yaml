@@ -1,0 +1,42 @@
+version: '3'
+services:
+  web:
+    container_name: laravel-web
+    image: nginx:latest
+    ports:
+      - '8080:80'
+    volumes:
+      - ./project:/var/www/hillel-laravel
+      - ./docker-environment/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php-fpm
+  php-fpm:
+    container_name: laravel-php-fpm
+    build:
+      context: ./
+      dockerfile: ./docker-environment/Dockerfile
+    volumes:
+      - ./project:/var/www/hillel-laravel
+    depends_on:
+      - db
+  db:
+    container_name: laravel-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel-app
+      MYSQL_USER: hillel
+      MYSQL_PASSWORD: secret
+    ports:
+      - "9906:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: laravel-phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+    restart: always
+    ports:
+      - '8081:80'
