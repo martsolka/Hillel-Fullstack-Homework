@@ -16,8 +16,14 @@
         <a href="{{ route('poll-types.create') }}" class="btn btn-dark fw-medium text-nowrap">➕ Create New</a>
       </div>
       <div class="card-body">
+        @if (session('alert.message'))
+        <div class="alert alert-{{ session('alert.type', 'success') }} alert-dismissible fade show" role="alert">
+          {{session('alert.message')}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="table-responsive text-nowrap">
-          <table class="table table-hover table-striped table-bordered align-middle text-center">
+          <table class="table table-hover table-bordered align-middle text-center">
             <thead class="table-dark text-uppercase align-middle small">
               <tr>
                 <th>Id</th>
@@ -29,27 +35,25 @@
               </tr>
             </thead>
             <tbody>
-              @if (count($pollTypes) > 0)
-              @foreach ($pollTypes as $pollType)
+              @forelse ($pollTypes as $pollType)
               <tr>
                 <td>{{ $pollType->id }}</td>
                 <td>{{ $pollType->name }}</td>
                 <td>{{ $pollType->description ?? '➖' }}</td>
-                <td><span class="badge bg-dark-subtle text-dark-emphasis text-uppercase">{{ $pollType->status }}</span></td>
+                <td><span class="badge bg-{{ $pollType->status->color() }}-subtle text-{{ $pollType->status->color() }}-emphasis">{{ $pollType->status->label() }}</span></td>
                 <td>
                   <small class="text-body-secondary">{{ $pollType->created_at }} / {{ $pollType->updated_at ?? '➖' }}</small>
                 </td>
                 <td>
-                  <a class="btn btn-sm btn-outline-warning me-1" href="#">✏️</a>
-                  <a class="btn btn-sm btn-outline-danger" href="#">❌</a>
+                  <a class="btn btn-sm bg-light-subtle me-1" href="{{ route('poll-types.edit', $pollType) }}">✏️</a>
+                  <a class="btn btn-sm bg-light-subtle" href="#">❌</a>
                 </td>
               </tr>
-              @endforeach
-              @else
+              @empty
               <tr>
                 <td colspan="6" class="text-center">👀 No data found in the database ...</td>
               </tr>
-              @endif
+              @endforelse
             </tbody>
           </table>
         </div>

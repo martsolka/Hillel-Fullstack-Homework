@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\PollTypeStatus;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,19 +26,19 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'How was your 2023 overall?',
                 'description' => 'This poll type allows users to share their feedback on the year 2023.',
-                'status' => 'active',
+                'status' => fake()->randomElement(PollTypeStatus::cases())->value,
                 'created_at' => now()->subDay(),
             ],
             [
                 'name' => 'Movie Rating',
                 'description' => 'This poll type allows users to rate a movie.',
-                'status' => 'draft',
+                'status' => PollTypeStatus::DRAFT->value,
                 'created_at' => now(),
             ],
             [
                 'name' => 'Product Survey',
                 'description' => NULL,
-                'status' => 'inactive',
+                'status' => fake()->randomElement(PollTypeStatus::cases())->value,
                 'created_at' => now()->subDays(2),
             ]
         ]);
