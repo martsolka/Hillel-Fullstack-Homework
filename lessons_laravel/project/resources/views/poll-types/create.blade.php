@@ -15,6 +15,7 @@
         <h2 class="card-title text-center">Create Poll Type</h2>
       </div>
       <div class="card-body">
+        @include('poll-types.form-errors')
         <form action="{{ route('poll-types.store') }}" method="POST" id="poll-type-create" class="row g-3 row-cols-1 row-cols-md-auto">
           @csrf
           <div class="col col-lg-4">
@@ -34,7 +35,7 @@
               <select name="status" id="status" class="form-select">
                 <option value="" selected disabled>Choose...</option>
                 @foreach (\App\Enums\PollTypeStatus::cases() as $status)
-                <option value="{{ $status->value }}">
+                <option value="{{ $status->value }}" @selected(old('status') === $status->value)>
                   {{ $status->label() }}
                 </option>
                 @endforeach

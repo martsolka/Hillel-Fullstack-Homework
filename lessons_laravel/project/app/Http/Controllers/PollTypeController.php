@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Enums\PollTypeStatus;
+use App\Http\Requests\StorePollTypeRequest;
+use App\Http\Requests\UpdatePollTypeRequest;
 use App\Models\PollType;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,7 @@ class PollTypeController extends Controller
         return view('poll-types.create');
     }
 
-    public function store(Request $request)
+    public function store(StorePollTypeRequest $request)
     {
         $data = $request->only(['name', 'description', 'status']);
         // $pollType = (new PollType)->fill($data);
@@ -41,8 +43,24 @@ class PollTypeController extends Controller
         return view('poll-types.edit', compact('pollType'));
     }
 
-    public function update(Request $request, PollType $pollType)
+    public function update(UpdatePollTypeRequest $request, PollType $pollType)
     {
+        // $data = $request->only(['name', 'description', 'status']);
+        // PollType::query()->where('id', $pollType->id)->update($data);
 
+        $pollType->name = $request->input('name');
+        $pollType->description = $request->input('description');
+        $pollType->status = $request->enum('status', PollTypeStatus::class);
+        $pollType->save();
+
+        return to_route('poll-types.index')->with('alert.message', "Poll type with ID '{$pollType->id}' was successfully updated.");
     }
+
+    public function destroy(PollType $pollType)
+    {
+        $pollType->delete();
+
+        return to_route('poll-types.index')->with('alert.message', "Poll type with ID '{$pollType->id}' was successfully deleted from the database.");
+    }
+
 }

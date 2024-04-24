@@ -15,17 +15,19 @@
         <h2 class="card-title text-center">Edit Poll Type</h2>
       </div>
       <div class="card-body">
+        @include('poll-types.form-errors')
         <form action="{{ route('poll-types.update', $pollType) }}" method="POST" id="poll-type-update" class="row g-3 row-cols-1 row-cols-md-auto">
           @csrf
+          @method('PUT')
           <div class="col col-lg-4">
             <div class="form-floating">
-              <input type="text" name="name" id="name" class="form-control" value="{{ $pollType->name }}" placeholder="Enter name">
+              <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $pollType->name) }}" placeholder="Enter name">
               <label for="name" class="form-label">Name</label>
             </div>
           </div>
           <div class="col flex-grow-1">
             <div class="form-floating">
-              <input type="text" name="description" id="description" class="form-control" value="{{ $pollType->description }}" placeholder="Enter description">
+              <input type="text" name="description" id="description" class="form-control" value="{{ old('description', $pollType->description) }}" placeholder="Enter description">
               <label for="description" class="form-label">Description</label>
             </div>
           </div>
@@ -34,7 +36,7 @@
               <select name="status" id="status" class="form-select">
                 <option value="" selected disabled>Choose...</option>
                 @foreach (\App\Enums\PollTypeStatus::cases() as $status)
-                <option value="{{ $status->value }}" @selected( $pollType->status->value === $status->value)>
+                <option value="{{ $status->value }}" @selected(old('status', $pollType->status->value) === $status->value)>
                   {{ $status->label() }}
                 </option>
                 @endforeach
