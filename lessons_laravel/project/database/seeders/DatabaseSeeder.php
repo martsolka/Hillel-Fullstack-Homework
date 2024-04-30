@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Enums\PollTypeStatus;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Tag;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -42,5 +45,17 @@ class DatabaseSeeder extends Seeder
                 'created_at' => now()->subDays(2),
             ]
         ]);
+
+        $categories = Category::factory(10)->create();
+        $tags = Tag::factory(20)->create();
+
+        for ($i = 0; $i < 35; $i++) {
+            $randCategory = $categories->random();
+            $randTags = $tags->random(rand(3, 10));
+            Product::factory()
+                ->for($randCategory)
+                ->hasAttached($randTags)
+                ->create();
+        }
     }
 }

@@ -1,0 +1,24 @@
+.mw-px-100 {
+    max-width: 100px;
+}
+
+.mw-px-200 {
+    max-width: 200px;
+}
+
+.mw-px-300 {
+    max-width: 300px;
+}
+
+.mh-px-400 {
+    max-height: 400px;
+}
+
+.pagination-dark .pagination {
+    --bs-pagination-color: var(--bs-gray-dark);
+    --bs-pagination-hover-color: var(--bs-dark);
+    --bs-pagination-active-bg: var(--bs-dark);
+    --bs-pagination-active-border-color: var(--bs-dark);
+    --bs-pagination-focus-color: var(--bs-dark);
+    margin: 0;
+}
