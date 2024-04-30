@@ -3,6 +3,7 @@
 use App\Http\Controllers\PollTypeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\RestrictMozillaAccess;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(RestrictMozillaAccess::class)->group(function () {
@@ -21,3 +22,25 @@ Route::prefix('poll-types')->name('poll-types.')->group(function () {
 });
 
 Route::resource('products', ProductController::class);
+
+// Database: Query Builders - SELECT statements
+Route::get('/db-test-select', function () {
+    $q1 = DB::table('products')
+        ->orderBy('price', 'desc')
+        ->limit(3);
+
+    $q2 = DB::table('products')
+        ->select('product_name', 'price')
+        ->where('price', '>', 100);
+
+    $q3 = DB::table('products')
+        ->select('category', DB::raw('AVG(price) AS average_price'))
+        ->groupBy('category');
+
+    $q4 = DB::table('users')
+        ->leftJoin('orders', 'users.user_id', '=', 'orders.user_id')
+        ->select('users.username', DB::raw('COUNT(orders.order_id) AS total_orders'))
+        ->groupBy('users.user_id');
+
+    dump($q1->toRawSql(), $q2->toRawSql(), $q3->toRawSql(), $q4->toRawSql());
+});
