@@ -65,7 +65,7 @@ class ProductController extends Controller
         $product = Product::query()->create($data);
         $product->tags()->attach($tagsIds);
 
-        return to_route('products.index', ['sort' => 'updated_at', 'dir' => 'desc'])->with('alert.message', "Product with ID '{$product->id}' was successfully added to the database.");
+        return to_route('products.index', ['sort' => 'created_at', 'dir' => 'desc'])->with('alert.message', "Product with ID '{$product->id}' was successfully added to the database.");
     }
 
     /**
