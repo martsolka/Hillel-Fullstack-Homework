@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PollTypeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\RestrictMozillaAccess;
@@ -44,3 +45,5 @@ Route::get('/db-test-select', function () {
 
     dump($q1->toRawSql(), $q2->toRawSql(), $q3->toRawSql(), $q4->toRawSql());
 });
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');

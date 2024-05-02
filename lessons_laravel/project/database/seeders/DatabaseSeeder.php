@@ -4,9 +4,16 @@ namespace Database\Seeders;
 
 use App\Enums\PollTypeStatus;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Like;
+use App\Models\News;
+use App\Models\NewsComment;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -55,6 +62,31 @@ class DatabaseSeeder extends Seeder
             Product::factory()
                 ->for($randCategory)
                 ->hasAttached($randTags)
+                ->create();
+        }
+
+        $usersCount = 15;
+        $newsCount = 25;
+
+        $users = User::factory($usersCount)->create();
+
+        for ($i = 0; $i < $newsCount; $i++) {
+            $author = $users->random();
+            $usersExceptAuthor = $users->where('id', '<>', $author->id);
+            $usersToLike = $users->random(rand(1, $usersCount - 1))->pluck('id');
+
+            News::factory()
+                ->for($author)
+                ->when(
+                    rand(0, 1) === 1,
+                    fn (Factory $q) => $q->has(
+                        Comment::factory(rand(1, $usersCount - 2))
+                            ->state(new Sequence(fn () => ['user_id' => $usersExceptAuthor->random()->id]))
+                    )->has(
+                        Like::factory($usersToLike->count())
+                            ->state(new Sequence(fn ($sequence) => ['user_id' => $usersToLike[$sequence->index]]))
+                    )
+                )
                 ->create();
         }
     }
