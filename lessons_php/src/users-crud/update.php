@@ -6,9 +6,15 @@ AuthManager::handleSignOut();
 $id = $_GET['id'] ?? -1;
 $userModel = new UserModel();
 
-if ($userModel->isDefaultAdmin($_GET)) {
-  $_SESSION['alert'] = ['content' => "❌ You can't update the default admin!", 'type' => 'danger'];
-  AuthManager::goTo('/users-crud/');
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+  $user = $userModel->read((int)$id);
+  FormValidator::setData($user);
+  AuthManager::goTo('/404.php', !$user);
+
+  if ($userModel->isDefaultAdmin($_GET)) {
+    $_SESSION['alert'] = ['content' => "❌ You can't update the default admin!", 'type' => 'danger'];
+    AuthManager::goTo('/users-crud/');
+  }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,10 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['alert'] = ['content' => "✔ User (ID: $id) updated successfully!", 'type' => 'success'];
     AuthManager::reAuthUser($id);
   }
-}else {
-  $user = $userModel->read((int)$id);
-  FormValidator::setData($user);
-  AuthManager::goTo('/404.php', !$user);
 }
 
 $pageTitle = 'Users CRUD | Update User';

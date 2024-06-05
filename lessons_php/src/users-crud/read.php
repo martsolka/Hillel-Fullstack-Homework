@@ -1,5 +1,8 @@
 <?php require_once('includes.php');
 
+AuthManager::goTo('/home-private.php', !AuthManager::hasRole(Role::ROOT, Role::ADMIN));
+AuthManager::handleSignOut();
+
 $id = $_GET['id'] ?? -1;
 
 $data = [
@@ -14,11 +17,12 @@ $data = [
 ];
 
 $user = (new UserModel)->read((int)$id, array_keys($data));
+AuthManager::goTo('/404.php', !$user);
+
 $user['role'] = Role::fromValue($user['role'])->label();
 $user['gender'] = $user['gender'] ? Gender::fromValue($user['gender'])->label() : '';
 $user['country'] = $user['country'] ? Country::fromValue($user['country'])->label() : '';
 
-AuthManager::goTo('/404.php', !$user);
 
 $pageTitle = 'Users CRUD | User Details';
 require_once('./../page-head.php');
