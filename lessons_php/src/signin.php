@@ -1,59 +1,10 @@
-<?php
-session_start();
-require_once('functions.php');
+<?php require_once('users-crud/includes.php');
 
-if (isset($_SESSION['is_auth'])) {
-  redirect('home-private.php');
-}
+AuthManager::goTo('/home-private.php', AuthManager::isSignedIn());
+AuthManager::handleSignOut();
 
-$demoAccount = [
-  'email' => 'demo123@gmail',
-  'password' => '65d4f620',
-];
-
-$validationRules = [
-  'email' => [
-    [
-      'check' => function ($value) {
-        return empty($value);
-      },
-      'error_msg' => 'Email is required'
-    ],
-    [
-      'check' => function ($value) {
-        global $demoAccount;
-        return $value !== $demoAccount['email'];
-      },
-      'error_msg' => 'Email is not registered',
-    ]
-  ],
-  'password' => [
-    [
-      'check' => function ($value) {
-        return empty($value);
-      },
-      'error_msg' => 'Password is required'
-    ],
-    [
-      'check' => function ($value) {
-        global $demoAccount;
-        return $value !== $demoAccount['password'];
-      },
-      'error_msg' => 'Password is incorrect'
-    ],
-  ]
-];
-
-[$fields, $errors] = resetFormFields($validationRules);
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  validateForm($validationRules, $fields, $errors);
-
-  if (empty(array_filter($errors))) {
-    $_SESSION['is_auth'] = true;
-    [$fields, $errors] = resetFormFields($validationRules);
-    redirect();
-  }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  AuthManager::goTo('/home-private.php', AuthManager::signIn($_POST));
 }
 
 $pageTitle = 'Authorization Page';
@@ -76,18 +27,19 @@ require_once('page-head.php');
                 <div class="row">
                   <label for="email" class="col col-form-label fw-medium">Email:</label>
                   <div class="col-6 flex-fill">
-                    <input type="email" class="form-control <?= validationClass('email', $errors) ?>" id="email" name="email" value="<?= $fields['email'] ?>" required>
-                    <?= displayError('email', $errors) ?>
+                    <input type="email" class="form-control <?= FormValidator::hasError('email') ? 'is-invalid' : '' ?>" id="email" name="email" value="<?= FormValidator::value('email') ?>" required>
+                    <div class="invalid-feedback" role="alert"><?= FormValidator::error('email') ?></div>
                   </div>
                 </div>
                 <div class="row">
                   <label for="password" class="col col-form-label fw-medium">Password:</label>
                   <div class="col-6 flex-fill">
-                    <input type="password" class="form-control <?= validationClass('password', $errors) ?>" id="password" name="password">
-                    <?= displayError('password', $errors) ?>
+                    <input type="password" class="form-control <?= FormValidator::hasError('password') ? 'is-invalid' : '' ?>" name="password" required>
+                    <div class="invalid-feedback" role="alert"><?= FormValidator::error('password') ?></div>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-success bg-gradient fw-medium mt-2">Access Account</button>
+                <?php FormValidator::clearErrors() ?>
               </form>
             </div>
             <div class="card-footer py-1 text-center">
@@ -103,8 +55,8 @@ require_once('page-head.php');
             <h2 class="fs-6 mb-1">Demo Account</h2>
             <p class="text-muted small mb-1">Use this credentials for quick testing:</p>
             <ul class="list-group list-group-horizontal small">
-              <li class="list-group-item flex-grow-1">📧Email: <strong><?= $demoAccount['email'] ?></strong></li>
-              <li class="list-group-item flex-grow-1">🔐Password: <strong><?= $demoAccount['password'] ?></strong></li>
+              <li class="list-group-item flex-grow-1">📧Email: <strong><?= UserModel::DEFAULT_ADMIN['email'] ?></strong></li>
+              <li class="list-group-item flex-grow-1">🔐Password: <strong><?= UserModel::DEFAULT_ADMIN['password'] ?></strong></li>
             </ul>
           </div>
         </div>

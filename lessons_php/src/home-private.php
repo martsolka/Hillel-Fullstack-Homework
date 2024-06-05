@@ -1,11 +1,11 @@
-<?php
-session_start();
-require_once('functions.php');
+<?php require_once('users-crud/includes.php');
 
-checkAuth();
-handleSignout();
+AuthManager::goTo('/signin.php', !AuthManager::isSignedIn());
+AuthManager::handleSignOut();
 
+$currentUser = AuthManager::currentUser();
 $pageTitle = 'Home | Private Page';
+
 require_once('page-head.php');
 ?>
 
@@ -19,8 +19,11 @@ require_once('page-head.php');
       <main class="card-body vstack h-100">
         <strong>Content</strong>
         <div class="m-auto text-body-secondary text-center">
-          <p class="h1">Successfully Logged In!</p>
-          <p class="lead">This is a private area. You can only see this if you are logged in.</p>
+          <h1>Welcome Back, <?= $currentUser['name'] ?>!</h1>
+          <p class="lead">This is a private area. You can only see this if you are logged in <strong class="text-body">as <?= Role::fromValue($currentUser['role'])->label() ?></strong>.</p>
+          <?php if (AuthManager::hasRole(Role::ROOT, Role::ADMIN)) : ?>
+            <a class="btn btn-success bg-gradient fw-medium fs-5 px-4 m-2" href="/users-crud/">👨‍👩‍👦 Users CRUD&rarr;</a>
+          <?php endif; ?>
           <a class="btn btn-success bg-gradient fw-medium fs-5 px-4 m-2" href="/online-shop/">🛍 Grocery Shop &rarr;</a>
         </div>
       </main>
