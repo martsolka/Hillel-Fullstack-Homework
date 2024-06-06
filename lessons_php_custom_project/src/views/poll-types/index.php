@@ -13,6 +13,7 @@
     <div class="card shadow-sm border-0">
       <div class="card-header hstack justify-content-between flex-wrap">
         <h2 class="card-title">📃 Poll Types</h2>
+        <a href="/poll-types/create" class="btn btn-dark fw-medium text-nowrap">➕ Create New</a>
       </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
@@ -27,17 +28,19 @@
               </tr>
             </thead>
             <tbody>
-              <?php if (!empty($pollTypes)) : ?>
-                <?php foreach ($pollTypes as $pollType) : ?>
+              <?php /** @var app\Models\PollType[] $pollTypes */
+              if (!empty($pollTypes)) : ?>
+                <?php
+                foreach ($pollTypes as $pollType) : ?>
                   <tr>
-                    <td><?= $pollType['id'] ?></td>
-                    <td><?= $pollType['name'] ?></td>
-                    <td><?= $pollType['description'] ?? '➖' ?></td>
+                    <td><?= $pollType->id ?></td>
+                    <td><?= $pollType->name ?></td>
+                    <td><?= $pollType->description ?? '➖' ?></td>
                     <td>
-                      <span class="badge bg-secondary-subtle text-secondary-emphasis"><?= $pollType['status'] ?></span>
+                      <span class="badge bg-<?= $pollType->status()->color(); ?>-subtle text-<?= $pollType->status()->color(); ?>-emphasis"><?= $pollType->status ?></span>
                     </td>
                     <td>
-                      <small class="text-body-secondary"><?= $pollType['created_at'] ?> / <?= $pollType['updated_at'] ?? '➖' ?></small>
+                      <small class="text-body-secondary"><?= $pollType->created_at ?> / <?= $pollType->updated_at ?? '➖' ?></small>
                     </td>
                   </tr>
                 <?php endforeach ?>
