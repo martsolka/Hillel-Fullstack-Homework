@@ -16,6 +16,12 @@
         <a href="/poll-types/create" class="btn btn-dark fw-medium text-nowrap">➕ Create New</a>
       </div>
       <div class="card-body">
+        <?php if (isset($_SESSION['alert'])) : ?>
+          <div class="alert alert-<?= $_SESSION['alert']['type'] ?? 'success' ?> show" role="alert">
+            <?= $_SESSION['alert']['message'] ?>
+          </div>
+        <?php endif; ?>
+        <?php unset($_SESSION['alert']); ?>
         <div class="table-responsive text-nowrap">
           <table class="table table-bordered align-middle text-center">
             <thead class="table-dark text-uppercase align-middle small">
@@ -25,6 +31,7 @@
                 <th>Description</th>
                 <th>Status</th>
                 <th>Created At / Updated At</th>
+                <th>Edit / Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -37,10 +44,14 @@
                     <td><?= $pollType->name ?></td>
                     <td><?= $pollType->description ?? '➖' ?></td>
                     <td>
-                      <span class="badge bg-<?= $pollType->status()->color(); ?>-subtle text-<?= $pollType->status()->color(); ?>-emphasis"><?= $pollType->status ?></span>
+                      <span class="badge bg-<?= $pollType->status()->color(); ?>-subtle text-<?= $pollType->status()->color(); ?>-emphasis"><?= $pollType->status()->label() ?></span>
                     </td>
                     <td>
                       <small class="text-body-secondary"><?= $pollType->created_at ?> / <?= $pollType->updated_at ?? '➖' ?></small>
+                    </td>
+                    <td>
+                      <a class="btn btn-sm bg-light-subtle me-1" href="/poll-types/edit?id=<?= $pollType->id ?>">✏️</a>
+                      <a class="btn btn-sm bg-light-subtle me-1" href="/poll-types/delete?id=<?= $pollType->id ?>" onclick="return confirm('Are you sure you want to delete this poll type (<?= $pollType->name ?>)?')">❌</a>
                     </td>
                   </tr>
                 <?php endforeach ?>
