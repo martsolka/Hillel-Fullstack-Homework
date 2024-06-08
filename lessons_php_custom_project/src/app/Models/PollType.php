@@ -17,4 +17,9 @@ class PollType extends AbstractModel
   {
     return PollTypeStatus::from($this->attributes['status'] ?? self::DEFAULT_STATUS);
   }
+
+  public function questions(): array
+  {
+    return PollTypeQuestion::wherePollTypeId($this->attributes['id']);
+  }
 }

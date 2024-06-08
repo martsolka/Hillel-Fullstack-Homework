@@ -16,9 +16,9 @@
       </div>
       <div class="card-body">
         <?php
-        $errors = $_SESSION['errors'] ?? [];
-        $old = $_SESSION['old'] ?? [];
-        unset($_SESSION['errors'], $_SESSION['old']);
+        $errors = $_SESSION['errors']['poll_type'] ?? [];
+        $old = $_SESSION['old']['poll_type'] ?? [];
+        unset($_SESSION['errors']['poll_type'], $_SESSION['old']['poll_type']);
         ?>
         <?php if ($errors) : ?>
           <div class="alert alert-danger">

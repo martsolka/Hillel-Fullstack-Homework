@@ -36,14 +36,15 @@ abstract class AbstractModel
       $this->tableName(),
       implode(',', array_map(fn ($key) => "$key = :$key", array_keys($this->attributes)))
     ));
+    $stmt->execute($this->attributes);
 
-    return $stmt->execute($this->attributes);
+    return $stmt->rowCount() > 0;
   }
 
-  public static function delete(int $id): bool
+  public function delete(): bool
   {
-    $stmt = PDO::init()->prepare('DELETE FROM ' . self::make()->tableName() . ' WHERE id = :id');
-    $stmt->execute(['id' => $id]);
+    $stmt = PDO::init()->prepare('DELETE FROM ' . $this->tableName() . ' WHERE id = :id');
+    $stmt->execute(['id' => $this->attributes['id']]);
 
     return $stmt->rowCount() > 0;
   }
@@ -72,5 +73,13 @@ abstract class AbstractModel
     $stmt->execute(['id' => $id]);
 
     return $stmt->rowCount() > 0 ? self::make()->fill($stmt->fetch()) : null;
+  }
+
+  public static function whereEqual(string $column, mixed $value): array
+  {
+    $stmt = PDO::init()->prepare('SELECT * FROM ' . self::make()->tableName() . ' WHERE ' . $column . ' = :value');
+    $stmt->execute(['value' => $value]);
+
+    return array_map(fn ($item) => self::make()->fill($item), $stmt->fetchAll() ?: []);
   }
 }

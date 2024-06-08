@@ -3,7 +3,9 @@
 namespace app\Controllers;
 
 use app\Enums\PollTypeStatus;
+use app\Enums\QuestionType;
 use app\Models\PollType;
+use app\Models\PollTypeQuestion;
 use core\Validator;
 use core\Viewer;
 
@@ -40,8 +42,8 @@ class PollTypeController
 
     try {
       if ($errors = Validator::make($rules, $data)->validate()) {
-        $_SESSION['errors'] = $errors;
-        $_SESSION['old'] = $data;
+        $_SESSION['errors']['poll_type'] = $errors;
+        $_SESSION['old']['poll_type'] = $data;
         header('Location: /poll-types/create');
         exit;
       }
@@ -95,8 +97,8 @@ class PollTypeController
     $data = $this->getPostData($rules);
 
     if ($errors = Validator::make($rules, $data)->validate()) {
-      $_SESSION['errors'] = $errors;
-      $_SESSION['old'] = $data;
+      $_SESSION['errors']['poll_type'] = $errors;
+      $_SESSION['old']['poll_type'] = $data;
       header("Location: /poll-types/edit?id={$id}");
       exit();
     }
@@ -113,7 +115,7 @@ class PollTypeController
   {
     $id = $_GET['id'] ?? null;
     try {
-      if (PollType::delete($id)) {
+      if (PollType::find($id)?->delete()) {
         $_SESSION['alert']['message'] = "Poll type with id '{$id}' was successfully deleted.";
       } else {
         throw new \Exception('Poll type with id \'' . $id . '\' was not found in the database.');
@@ -148,7 +150,7 @@ class PollTypeController
   protected function getPostData(array $rules): array
   {
     return array_reduce(array_keys($rules), fn ($acc, $fieldName) => [
-      $fieldName => empty($value = trim($_POST[$fieldName])) ? null : $value
+      $fieldName => trim($_POST[$fieldName] ?? '') ?: null
     ] + $acc, []);
   }
 }

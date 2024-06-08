@@ -16,9 +16,7 @@
 
 - 🗨️ **poll_answers** - зберігає відповіді, надіслані користувачами на кожне питання опитування.
 
----
-
-SQL script to create the necessary tables:
+## 𝄜 Створення таблиць
 
 ```sql
 CREATE TABLE `poll_types` (
@@ -33,9 +31,9 @@ CREATE TABLE `poll_types` (
 CREATE TABLE `poll_type_questions` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `type` varchar(20) DEFAULT NULL,
-  `question` varchar(255) DEFAULT NULL,
+  `question` varchar(255) NOT NULL,
   `poll_type_id` int UNSIGNED NOT NULL,
-  FOREIGN KEY (`poll_type_id`) REFERENCES `poll_types` (`id`)
+  FOREIGN KEY (`poll_type_id`) REFERENCES `poll_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `polls` (
@@ -43,7 +41,7 @@ CREATE TABLE `polls` (
   `owner` varchar(255) DEFAULT NULL,
   `poll_type_id` int UNSIGNED NOT NULL,
   `answered_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (`poll_type_id`) REFERENCES `poll_types` (`id`)
+  FOREIGN KEY (`poll_type_id`) REFERENCES `poll_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `poll_answers` (
@@ -51,13 +49,37 @@ CREATE TABLE `poll_answers` (
   `answer` text,
   `poll_id` int UNSIGNED NOT NULL,
   `poll_type_question_id` int UNSIGNED NOT NULL,
-  FOREIGN KEY (`poll_id`) REFERENCES `polls` (`id`),
-  FOREIGN KEY (`poll_type_question_id`) REFERENCES `poll_type_questions` (`id`)
+  FOREIGN KEY (`poll_id`) REFERENCES `polls` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`poll_type_question_id`) REFERENCES `poll_type_questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE `poll_type_question_options` (
   `id` int UNSIGNED NOT NULL,
   `question_id` int UNSIGNED NOT NULL,
   `option_text` varchar(255) NOT NULL UNIQUE,
-  FOREIGN KEY (`question_id`) REFERENCES `poll_type_questions` (`id`)
+  FOREIGN KEY (`question_id`) REFERENCES `poll_type_questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+```
+
+## ➕ Додавання тестових даних
+
+```sql
+INSERT INTO poll_types (name, status, description) VALUES
+('Product Evaluation', 'active', 'Survey to gather feedback on a new product'),
+('Customer Satisfaction', 'active', 'Poll to measure customer satisfaction'),
+('Movie Rating', 'active', 'Survey to rate a movie by viewers'),
+('Year in Review 2023', 'draft', 'Poll to summarize the past year'),
+('Employee Engagement', 'archived', 'Poll to measure employee engagement and job satisfaction');
+
+INSERT INTO poll_type_questions (type, question, poll_type_id) VALUES
+('rating', 'How would you rate the overall quality of the product?', 1),
+('multiple_choice', 'Which feature did you like the most?', 1),
+('open_ended', 'What improvements would you suggest for the product?', 1),
+('single_choice', 'What genre of movie did you choose?', 3),
+('multiple_choice', 'What emotions did the movie evoke in you?', 3),
+('rating', 'How would you rate the year 2023 overall?', 4);
+```
+
+## 💻 Демонстрація 💻
+
+https://github.com/martsolka/Hillel-Fullstack-Homework/assets/75698258/d3274c73-19aa-4bda-b50f-278ab38776b3

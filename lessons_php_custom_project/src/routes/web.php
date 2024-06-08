@@ -10,4 +10,6 @@ return [
   '/poll-types/edit' => [\app\Controllers\PollTypeController::class, 'edit'],
   '/poll-types/update' => [\app\Controllers\PollTypeController::class, 'update'],
   '/poll-types/delete' => [\app\Controllers\PollTypeController::class, 'delete'],
+  '/poll-type-questions/store' => [\app\Controllers\PollTypeQuestionController::class, 'store'],
+  '/poll-type-questions/delete' => [\app\Controllers\PollTypeQuestionController::class, 'delete'],
 ];
